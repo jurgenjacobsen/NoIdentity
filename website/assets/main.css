@@ -1,0 +1,797 @@
+html {
+    scroll-behavior: smooth;
+  }
+
+body {
+    background-color: #23272A;
+    color: white;
+    font-family: 'Trebuchet MS', sans-serif;
+    margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+}
+
+i {
+    color: rgb(114, 106, 106);
+}
+
+#inconstruction {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: rgb(237, 78, 78, 0.8);
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    font-size: 17px;
+    font-family: 'Trebuchet MS', sans-serif;
+    visibility: visible;
+  }
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #2a2a2b;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #7c54d8; 
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #7c54d8; 
+}
+
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto
+}
+
+.footer-column {
+    float: left;
+    width: 25%;
+}
+
+.footer-row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.footer-column h1 {
+    font-size: 16px;
+    color: #8855ff;
+}
+
+.footer-column p {
+    font-size: 15px;
+    color: white;
+    line-height: 110%;
+}
+
+.footer-column a {
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+}
+
+@media screen and (max-width: 600px) {
+    .footer-column {
+      width: 100%;
+    }
+  }
+
+@media (min-width: 576px) {
+    .container {
+        max-width: 540px
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+.global-navbar {
+    overflow: hidden;
+    background-color: #23272A;
+}
+
+.global-navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    padding: 15px 18px;
+}
+
+.global-navbar a:hover {
+    color: rgb(190, 190, 190);
+}
+
+.global-navbar .user-options {
+    margin-right: 15px;
+}
+
+.global-navbar .user-options a {
+    float: right;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    padding: 15px 18px;
+}
+
+.global-navbar .user-options a:hover {
+    color: rgb(190, 190, 190);
+}
+
+.global-navbar #bot_name {
+   font-weight: bold;
+   font-size: 18px;
+   cursor: default;
+}
+
+.global-navbar #bot_name:hover {
+    color: white;
+}
+
+.global-navbar .user-options #logout {
+    color: rgb(255, 71, 71);
+}
+
+.global-navbar .user-options #logout:hover {
+    color:rgb(163, 50, 50);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.splash-div {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.splash-div .title {
+    color: white;
+    font-weight: 100;
+}
+
+.splash-div .description {
+    color: rgb(192, 190, 190);
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.splash-div .btn-bar {
+    margin-top: 60px;
+}
+
+.splash-div .btn-bar .btn {
+    background-color: #8855ff;
+    color: white;
+    text-decoration: none;
+    padding: 14px 28px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: 700;
+    border: 1px solid #8855ff;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.splash-div .btn-bar .btn:hover {
+    background-color: #7c54d8;
+}
+
+.splash-div .btn-bar .btn .left {
+    float: left;
+}
+
+.splash-div .btn-bar .btn .right {
+    float: right;
+}
+
+.splash-div .btn-bar .animate:hover {
+    animation: floating-btn 2s infinite ease-in-out;
+}
+
+@keyframes floating-btn {
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Inicio da segunda parte*/
+.secondary-color-div {
+    background-color: #272a2c;
+    width: 100%;
+}
+
+.secondary-color-div .stats {
+    height: 150px;
+}
+
+.secondary-color-div .stats .title {
+    text-align: center;
+    margin-top: -20px;
+}
+
+.secondary-color-div .stats .list:after {
+    content: "";
+    display: table;
+    clear: both; 
+}
+
+.secondary-color-div .stats .list .item {
+    float: left;
+    width: 23%;
+    text-align: center;
+    margin-left: 2%;
+    margin-top: 30px;
+    height: 150px;
+    background-color: #23272A;
+    border-radius: 10px;
+    box-shadow: 4px 6px 6px 1px rgba(0, 0, 0, 0.2);
+    transition: all .3s ease-in-out;
+}
+
+.secondary-color-div .stats .list .item:hover {
+    transform: scale(1.09);
+}
+
+.secondary-color-div .stats .list .item .name {
+    font-size: 24px;
+    font-weight: 100;
+    margin-top: 10%;
+}
+
+.secondary-color-div .stats .list .item .number {
+    font-weight: 300;
+    color: #cfcfcf
+}
+
+.secondary-color-div .stats .list .item img {
+    width:  48px;
+    height: 48px;
+    margin-top: 5%;
+}
+
+@media screen and (max-width: 600px) {
+    .secondary-color-div .stats .list .item {
+      width: 100%;
+    }
+  }
+
+.secondary-color-div .features .title {
+    text-align: center;
+    margin-top: 150px;
+}
+
+.secondary-color-div .feature {
+    float: left;
+    width: 50%;
+    padding: 10px;
+}
+
+.secondary-color-div .upper {
+    margin-top: -75px;
+}
+
+.secondary-color-div .features-list {
+    margin-top: -75px;
+}
+
+.secondary-color-div .features-list:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@media screen and (max-width: 600px) {
+    .feature {
+      width: 100%;
+    }
+}
+
+.secondary-color-div .feature h1 {
+    font-weight: 500;
+    text-align: center;
+    margin-top: 25%;
+}
+
+.secondary-color-div .feature p {
+    color: rgb(192, 190, 190);
+    font-weight: 500;
+    font-size: 18px;
+    text-align: center;
+}
+
+.secondary-color-div .feature img {
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    height: 450px;
+}
+
+.secondary-color-div .feature i {
+    color: #8855ff;
+}
+
+.top-spacer {
+    margin-top: 75px;
+}
+
+.crew-div {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.crew-div .title {
+    color: white;
+    font-weight: 100;
+}
+
+.crew-div .crew-members .member {
+    float: left;
+    width: 25%;
+    transition: 1s;
+}
+
+.crew-div .crew-members .member:hover {
+    transform: scale(1.1);
+}
+
+.crew-div .crew-members .member h1 {
+    text-align: center;
+    font-weight: 100;
+    font-size: 18px;
+}
+
+.crew-div .crew-members .member p {
+    text-align: center;
+    font-weight: 200;
+    font-size: 16px;
+    color: rgb(192, 190, 190);
+}
+
+.crew-div .crew-members .member .member-icon {
+    border-radius: 50%;
+    width: 128px;
+    height: 128px;
+}
+
+.crew-div .crew-members .member .role-icon {
+    width: 12px;
+    height: 12px;
+}
+
+.crew-div .crew-members:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@media screen and (max-width: 600px) {
+    .member {
+      width: 100%;
+    }
+  }
+
+.status {
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.online {
+    background-color: #43B581;
+}
+
+.idle {
+    background-color: #FAA61A;
+}
+
+.dnd {
+    background-color: #F04747;
+}
+
+.offline {
+    background-color: #B9BBBE;
+}
+
+.dashboard {
+    background-color: #272a2c;
+}
+
+/* Dashboard */
+.guild {
+    background-color: #303238;
+    height: 250px;
+    border-radius: 5px;
+    transition: transform .4s;
+    float: left;
+    width: 20%;
+    margin-left: 25px;
+    margin-top: 50px;
+    box-shadow: 6px 10px 10px 1px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 600px) {
+    .guild {
+        width: 100%;
+    }
+}
+
+.guild:hover {
+    transform: scale(1.10);
+}
+
+.guild img {
+    border-radius: 50%;
+    height: 128px;
+    width: 128px;
+    margin-top: 15px;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.guild-name {
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    cursor: default;
+}
+
+.guild a {
+    background-color: #8855ff;
+    border: 1px solid #8855ff;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.guild a:hover {
+    color: rgba(255, 255, 255, 0.774);
+}
+
+.center-guild-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dashboard .guild {
+    text-align: center
+}
+
+.dashboard .guild-list:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@media screen and (max-width: 600px) {
+    .guild {
+      width: 100%;
+    }
+  }
+
+.dashboard .guild-icon {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+}
+
+.dashboard .guild-name {
+    font-size: 18px;
+    font-weight: 100;
+}
+
+.dashboard .guild-btn {
+    background-color: #8855ff;
+    color: white;
+    text-decoration: none;
+    padding: 14px 38px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: 700;
+    border: 1px solid #8855ff;
+    border-radius: 5px;
+    margin-top: 10%;
+}
+
+.dashboard .guild-btn:hover {
+    background-color: #7c54d8;
+}
+
+/* Profile */
+
+.profile-header {
+    margin-top: 10%;
+}
+
+.profile-icon {
+    width: 128px;
+    height: 128px;
+    border-radius: 50%;
+    float: left;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.profile-name {
+    font-size: 26px;
+    font-weight: 100;
+    margin-left: 10%;
+}
+
+/* Edit */
+
+.obj-container {
+    background-color: #272a2c;
+    border: 1px solid #272a2c;
+    width: 100%;
+    border-radius: 5px;
+    word-break: normal;
+}
+
+.obj-profile {
+    text-align: center;
+}
+
+.obj-icon {
+    border-radius: 50%;
+    width: 128px;
+    height: 128px;
+    margin-top: 15px;
+}
+
+.obj-profile span {
+    background: rgba(10, 10, 10, 0.2);
+    padding: 8 5;
+    border-radius: 5px;
+}
+
+.obj-not-found {
+    min-width: 150px;
+    background-color: #ed4e4e;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 16px;
+    left: 50%;
+    bottom: 30px;
+    font-size: 17px;
+}
+
+.obj-opt {
+    margin-top: 30px;
+}
+
+.obj-option-guild .switch {
+    float: right;
+    margin-right: 10%;
+}  
+
+.obj-option-guild {
+    float: left;
+    width: 100%;
+    height: 50px;
+    margin-top: 15px;
+}
+
+.obj-option-user {
+    float: left;
+    width: 100%;
+    height: 50px;
+    margin-top: 15px;
+}
+
+.obj-option-text {
+    text-align: center;
+    vertical-align: middle;
+    line-height: 200%;
+    font-size: 20px;
+    font-weight: 100;
+    margin-left: 10%
+}
+
+.obj-submit-btn {
+    margin-left: 95%;
+    background-color: #61c972;
+    color: white;
+    padding: 14px 26px;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid #61c972;
+    margin-right: 15px;
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.obj-option-btn:hover {
+    background-color: #53a561;
+}
+
+.obj-input-design {
+    border-radius: 5px;
+    border: 1px solid #272a2c;
+    padding: 12px 12px;
+    float: right;
+    margin-right: 10%;
+    width: 30%;
+    background-color: #23272A;
+    color: white;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    border-radius: 4px;
+    margin-right: 2px;
+    opacity: 0.6;
+    filter: invert(0.8);
+}
+
+/* Commands */
+
+.head {
+    text-align: center;
+}
+
+.page-title {
+    font-size: 47px;
+    font-weight: 100;
+    margin-top: 100px;
+}
+
+.command {
+    background-color: #303238;
+    height: 110px;
+    border-radius: 5px;
+    transition: transform .4s;
+    float: left;
+    width: 20%;
+    text-align: center;
+    margin-left: 25px;
+    margin-top: 50px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    color: white;
+}
+
+.command:hover {
+    transform: scale(1.10);
+}
+  
+.command-list:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.command-name {
+    background-color: #23272A;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 10px;
+    width: 90%;
+    border: 1px solid #23272A;
+    border-radius: 5px;
+    padding: 10;
+}
+
+.command-category-title {
+    font-size: 34px;
+    font-weight: 100;
+    margin-top: 120px;
+}
+.command hr {
+    border: 1px solid #23272A;
+}
+
+.command a {
+    text-decoration: none;
+    color: white;
+}
+
+@media screen and (max-width: 600px) {
+    .command {
+      width: 100%;
+    }
+}
+
+.suggestion {
+    font-size: 18px;
+    font-weight: 100;
+    background-color: #23272A;
+    width: 100%;
+    height: 100px;
+    margin-top: 10px;
+}
+
+.suggestion .id {
+    margin-left: 5%;
+    float: left;
+    margin-top: 3.5%;
+}
+
+.suggestion .author {
+    float: left;
+    margin-left: 5%;
+    text-align: center;
+    margin-top: 1%;
+}
+
+.suggestion .author img {
+    border-radius: 50%;
+    width: 52px;
+    height: 52px;
+    float: left;
+}
+
+.suggestion .author .name {
+    font-weight: 200;
+    float: left;
+}
+
+.suggestion .upvotes {
+    float: left;
+    margin-left: 5%;
+    text-align: center;
+    margin-top: 3.5%;
+}
+
+.suggestion .downvotes {
+    float: left;
+    margin-left: 5%;
+    text-align: center;
+    margin-top: 3.5%;
+}
+
+.suggestion .approved {
+    float: left;
+    margin-left: 5%;
+    text-align: center;
+    margin-top: 3.5%;
+}
+
+.suggestion .content {
+    float: left;
+    margin-left: 10%;
+}
+/* 
+
+Remover isto ao finalizar o código, remover under construction na linha 19 do main.css e úlima linha do header.ejs
+
+*/

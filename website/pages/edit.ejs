@@ -1,0 +1,75 @@
+<%- include('blocks/header', {client: client, auth: auth, user: user, permissions: permissions, finalObject: finalObject, finalObjectType: finalObjectType}) %>
+
+<div class="container">
+    <div class="obj-container obj-profile">
+        <% if(finalObjectType == 'guild') { %>
+            <img class="obj-icon" src="https://cdn.discordapp.com/icons/<%= finalObject.id %>/<%= finalObject.icon %>.jpg?size=512"/>
+            <h1><%= finalObject.name %></h1>
+            <p><span><%= finalObject.memberCount%> Membros</span> | <span>Dono(a) <%= finalObject.owner.user.tag %></span></p>
+    
+        <% } else if(finalObjectType == 'user') { %>
+            <img class="obj-icon" src="https://cdn.discordapp.com/avatars/<%= user.id %>/<%= user.avatar %>.png?size=512"/>
+            <h1><%= finalObject.username %></h1>
+    
+        <% } else { %>
+            <span class="obj-not-found">Não encontrado</span>
+        <% }; %>
+    </div>
+
+    <% if(finalObjectType == 'guild') { %>
+        <div class="obj-container obj-opt">
+            <form method="post">
+                <% const settings = client.settings.get(finalObject.id).custom_configs; %>
+                <% for (const key in settings) { %>
+                    <div class="obj-option-guild">
+                    <% 
+                        const opt_name = key
+                        .replace('prefix', 'Prefixo dos meus comandos')
+                        .replace('lang', 'Lingua')
+                        .replace('radio_channelID', 'Canal de voz padrão para música (ID)')
+                        .replace('report_channelID', 'Canal de reports (ID)')
+                        .replace('welcome_channelID', 'Canal de boas vindas (ID)')
+                        .replace('welcome_message', 'Mensagem de boas vindas')
+                        .replace('welcome_roleID', 'Cargo dado ao membro quando entrar (ID)')
+                        .replace('news_channelID', 'Canal de anúncios (ID)')
+                    %>
+                      <label class="obj-option-text" for="<%= key %>"><%= opt_name %></label>
+                      <input type="text" class="obj-input-space obj-input-design" id="<%= key %>" name="<%= key %>" placeholder="Digite <%= opt_name %>" value="<%= settings[key] %>">
+                    </div>
+                <% } %>
+                <button type="submit" class="obj-submit-btn">Salvar</button>
+            </form>
+        </div>
+    <% } else if(finalObjectType == 'user') { %>
+        <% let userID = finalObject.id %>
+        <div class="obj-container obj-opt">
+            <form method="post">
+                <% const profile = client.usersdata.get(userID).profile; %>
+                <% for (const option in profile) { %>
+                <% 
+                    const option_name = option
+                    .replace('realName', 'Nome real')
+                    .replace('bio', 'Biografia')
+                    .replace('birthday', 'Aniversário')
+                    .replace('role', 'Ocupação')
+                %>
+
+                    <% if(option !== `birthday`) { %>
+                        <div class="obj-option-user">
+                            <label class="obj-option-text" for="<%= option %>"><%= option_name %></label>
+                            <input type="text" autocomplete="off" class="obj-input-space obj-input-design" id="<%= option %>" name="<%= option %>" placeholder="Digite <%= option_name %>" value="<%= profile[option] %>">
+                        </div>
+                    <% } else if(option == `birthday`) { %>
+                        <div class="obj-option-user">
+                            <label class="obj-option-text" for="<%= option %>"><%= option_name %></label>
+                            <input type="date" max="2017-04-30" autocomplete="off" class="obj-input-space obj-input-design" id="<%= option %>" name="<%= option %>" placeholder="Digite <%= option_name %>" value="<%= profile[option] %>">
+                        </div>
+                    <% } %>
+                <% }; %>
+                <button type="submit" class="obj-submit-btn">Salvar</button>
+            </form>
+        </div>
+    <% } %>
+</div>
+
+<%- include('blocks/footer') %>

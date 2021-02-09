@@ -1,0 +1,29 @@
+<link rel="stylesheet" href="/assets/main.css">
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<title>
+    <%= client.user.username %>
+</title>
+
+<link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
+
+<div class="global-navbar">
+    <a href="" id="bot_name">NOIDENTITY</a>
+    <a href="/">Início</a>
+    <a href="/commands">Comandos</a>
+    <a href="/support">Servidor</a>
+
+    <div class="user-options">
+        <% if(user) { %>
+        <a href="/logout" id="logout">Sair</a>
+        <a href="/dashboard">Gerenciar Servidores</a>
+        <a href="/profile">Meu Perfil</a>
+        <% } else { %>
+        <a href="/login">Login</a>
+        <% } %>
+    </div>
+</div>
+
+<div id="inconstruction">Em Construção</div>

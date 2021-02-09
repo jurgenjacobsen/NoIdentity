@@ -1,0 +1,39 @@
+{
+  "name": "noidentity",
+  "version": "0.1.0",
+  "description": "A discord bot",
+  "main": "bot.js",
+  "scripts": {
+    "test": "node shard.js"
+  },
+  "author": "Jurgen Jacobsen",
+  "license": "ISC",
+  "dependencies": {
+    "@discordjs/opus": "^0.4.0",
+    "dblapi.js": "^2.4.1",
+    "discord-player": "^3.2.1",
+    "discord.js": "^12.5.1",
+    "dotenv": "^8.2.0",
+    "ejs": "^2.5.7",
+    "enmap": "^5.8.4",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "fetch-json": "^2.4.4",
+    "ffmpeg": "0.0.4",
+    "ffmpeg-static": "^4.2.7",
+    "fluent-ffmpeg": "^2.1.2",
+    "https": "^1.0.0",
+    "moment": "^2.29.1",
+    "moment-duration-format": "^2.3.2",
+    "morgan": "^1.10.0",
+    "node-opus": "^0.3.3",
+    "opusscript": "0.0.7",
+    "passport": "^0.4.1",
+    "passport-discord": "^0.1.4",
+    "random-puppy": "^1.1.0",
+    "util": "^0.12.3",
+    "weather-js": "^2.0.0",
+    "ytdl-core": "^4.4.5",
+    "ytsr": "^3.2.4"
+  }
+}

@@ -1,0 +1,15 @@
+<%- include('blocks/header', {client: client, auth: auth, user: user}) %>
+
+<div class="container">
+    <div class="container">
+        <div class="profile-header">
+            <img class="profile-icon" src="https://cdn.discordapp.com/avatars/<%= user.id %>/<%= user.avatar %>.png?size=1024">
+            <h1 class="profile-name"><%= user.username %></h1>
+        </div>
+        <div class="profile-body">
+
+        </div>
+    </div>
+</div>
+
+<%- include('blocks/footer') %>
