@@ -5,7 +5,7 @@ html {
 body {
     background-color: #23272A;
     color: white;
-    font-family: 'Trebuchet MS', sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
 	padding: 0;
 	border: 0;
@@ -30,7 +30,7 @@ i {
     left: 50%;
     bottom: 30px;
     font-size: 17px;
-    font-family: 'Trebuchet MS', sans-serif;
+    font-family: 'Roboto', sans-serif;
     visibility: visible;
   }
 
@@ -238,6 +238,7 @@ i {
 
 .secondary-color-div .stats {
     height: 150px;
+    cursor: pointer;
 }
 
 .secondary-color-div .stats .title {
@@ -289,28 +290,30 @@ i {
     .secondary-color-div .stats .list .item {
       width: 100%;
     }
-  }
+}
 
 .secondary-color-div .features .title {
     text-align: center;
     margin-top: 150px;
 }
 
-.secondary-color-div .feature {
+.secondary-color-div .features .list .item {
     float: left;
-    width: 50%;
-    padding: 10px;
+    width: 20%;
+    text-align: center;
+    transition: all .2s ease-in-out;
+    cursor: pointer;
 }
 
-.secondary-color-div .upper {
-    margin-top: -75px;
+.secondary-color-div .features .list .item:hover {
+    transform: scale(1.05);
 }
 
-.secondary-color-div .features-list {
-    margin-top: -75px;
+.secondary-color-div .features .list {
+    text-align: center;
 }
 
-.secondary-color-div .features-list:after {
+.secondary-color-div .features .list:after {
     content: "";
     display: table;
     clear: both;
@@ -322,26 +325,27 @@ i {
     }
 }
 
-.secondary-color-div .feature h1 {
+.secondary-color-div .features .list .item h1 {
     font-weight: 500;
     text-align: center;
     margin-top: 25%;
+    font-size: 28px;
 }
 
-.secondary-color-div .feature p {
+.secondary-color-div .features .list .item p {
     color: rgb(192, 190, 190);
     font-weight: 500;
     font-size: 18px;
     text-align: center;
 }
 
-.secondary-color-div .feature img {
+.secondary-color-div .features .list .item img {
     border-radius: 15px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     height: 450px;
 }
 
-.secondary-color-div .feature i {
+.secondary-color-div .features .list .item i {
     color: #8855ff;
 }
 
