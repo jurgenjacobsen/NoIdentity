@@ -1,4 +1,4 @@
-<%- include('blocks/header', {client: client, auth: auth, user: user}) %>
+<%- include('blocks/header', {client: client, auth: auth, user: user, page: page, i18n: i18n, lang: lang}) %>
     <%
         const help = {};
         client.commands.forEach((command) => {
@@ -8,28 +8,49 @@
         });
     %>
 
+    <% client.commands.forEach(cmd => { %>
+    <script>
+
+        $(window).on('load', function() {
+            $('#command-info-<%= cmd.config.name %>').hide();
+        });
+
+    </script>
+    <% }); %>
     <div class="head">
-        <h1 class="page-title"><%= client.commands.size%> Comandos</h1>
+        <h1 class="page-title"><%= client.commands.size%> <%= i18n.__("site.commands.commands") %></h1>
+        <p class="description" style="text-align: center; margin-right: 1%; margin-left: 1%;"><%= i18n.__("site.commands.description") %></p>
     </div>
 
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#26292b" fill-opacity="1" d="M0,160L48,176C96,192,192,224,288,202.7C384,181,480,107,576,106.7C672,107,768,181,864,192C960,203,1056,149,1152,122.7C1248,96,1344,96,1392,96L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#272a2c" fill-opacity="1" d="M0,160L48,176C96,192,192,224,288,202.7C384,181,480,107,576,106.7C672,107,768,181,864,192C960,203,1056,149,1152,122.7C1248,96,1344,96,1392,96L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
 
-    <div style="background-color: #26292b; margin-top: -10%;">
+    <div class="div-commands" style="margin-top: -5.5%;">
         <div class="container" style="text-align: center;">
             <% for (const category in help) { %>
                 <% if(category !== `Somente para desenvolvedores`) {%>
-                    <h1 class="command-category-title"><%= category %></h1>
+                    <h1 class="command-category-title"><%= i18n.__(`site.commands.categories.${category}`) %></h1>
     
                     <div class="command-list">
                         <% for (const command of help[category]) { %>
-                            <div class="command">
+                            <div class="command" onclick="$('#command-info-<%= command.config.name %>').show();">
                                 <div class="command-name">
                                     <%= command.help.name %>
                                 </div>
-                                <p>
-                                    <hr>
-                                    <a class="command-button" href="/commands/<%= command.help.name %>">Ver mais</a>
-                                </p>
+                            </div>
+                            <div class="command-info" id="command-info-<%= command.config.name %>">
+                                <div id="command-info-modal-<%= command.config.name %>" class="modal">
+                                    <div class="modal-content">
+                                        <span class="close" id="command-info-<%= command.config.name %>-close" onclick="$('#command-info-<%= command.config.name %>').hide();">&times;</span>
+                                        <div class="container">
+                                            <h1><%= command.config.name %></h1>
+                                            <div class="container">
+                                                <p><span class="key"><%= i18n.__(`site.commands.cat`) %></span> <%= i18n.__(`command.${command.config.name}.help.category`) %></p>
+                                                <p><span class="key"><%= i18n.__(`site.commands.example`) %></span> n!<%= i18n.__(`command.${command.config.name}.help.example`) %></p>
+                                                <p><span class="key"><%= i18n.__(`site.commands.desc`) %></span> <%= i18n.__(`command.${command.config.name}.help.description`) %></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         <% }; %>
                     </div>

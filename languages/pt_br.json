@@ -1,0 +1,1018 @@
+{
+	"site": {
+		"navbar": {
+			"home": "Início",
+			"commands": "Comandos",
+			"support_guild": "Servidor de Suporte",
+			"logout": "Sair",
+			"dashboard": "Gerenciar Servidores",
+			"profile": "Meu Perfil",
+			"login": "Entrar"
+		},
+		"footer": {
+			"external_websites": "Fontes Externas",
+			"pages": "Páginas",
+			"languages": "Língua"
+		},
+		"home": {
+			"welcome": "Bem-Vindo!",
+			"welcome_description": "Aqui você tem a oportunidade de ter todas as funções do seu servidor gratuitamente!",
+			"addMe": "Me Adicione",
+			"my_features": "Meus Recursos",
+			"patreon": "Patrocinar",
+			"stats": "Estatísticas",
+			"uptime": "Tempo ativo",
+			"users": "Usuários",
+			"servers": "Servidores",
+			"ran_commands": "Comandos Usados",
+			"features": "Recursos",
+			"features_list": {
+				"moderation": "Moderação",
+				"music": "Música",
+				"automation": "Automação",
+				"fun": "Diversão",
+				"info": "Informações"
+			},
+			"staff": "Equipe",
+			"developer": "Desenvolvedor"
+		},
+		"commands": {
+			"commands": "Comandos",
+			"description": "Clique no comando para ver mais informações sobre ele",
+			"seeMore": "Ver mais",
+			"cat": "Categoria",
+			"example": "Exemplo",
+			"desc": "Descrição",
+			"categories": {
+				"Diversão": "Diversão",
+				"Bot": "Bot",
+				"Moderação": "Moderação",
+				"Música": "Música",
+				"Diversos": "Diversos",
+				"Economia": "Economia",
+				"Níveis": "Níveis",
+				"Suporte": "Suporte"
+			}
+		},
+		"profile": {
+			"edit": "Editar perfil",
+			"xp_lvl": "Nível e XP",
+			"economy":"Economia",
+			"your_lvl": "Seu nível em cada servidor",
+			"your_xp": "Seu XP em cada servidor",
+			"your_money": "Dinheiro em cada servidor",
+			"your_bday": "Seu aniversário",
+			"txt": "Texto",
+			"sent_msg": "Mensagens que você enviou",
+			"ran_cmds": "Comandos que você usou",
+			"activity": "Atividade",
+			"stats": "Estatísticas",
+			"gift_redeemed": "PRESENTE REGASTADO",
+			"gift_received": "PRESENTE RECEBIDO",
+			"gift_sent": "PRESENTE ENVIADO",
+			"redeemedAGift": "{name} resgatou o presente que você enviou.",
+			"sentYouAGift": "{name} enviou um presente à você.",
+			"redeem": "Resgatar",
+			"youRedeemed": "Você resgatou um presente de {name}.",
+			"youSent": "Você enviou um presente para {name}."
+		},
+		"dashboard": {
+			"title": "Painel de customização",
+			"see": "Ver",
+			"add": "Adicionar",
+			"edit": "Edit"
+		}
+	},
+	"events": {
+		"message": {
+			"levelSystemOff": "Sistema de níveis está desativado, ative utilizando meu site. **n!site**",
+			"levelup": "Você subiu para o nível **{curLevel}**! :star:",
+			"noPerm": "Eu preciso de mais permissões para executar este comando."
+		}
+	},
+	"modules": {
+		"utilPlay": {
+			"playlistEnded": "a playlist acabou!",
+			"songNotFound": "Não foi possível encontrar esta música!",
+			"startPlaying": "🎶 Começando a tocar: **{songTitle}** \n {songUrl}",
+			"skippedSong": "pulou a música! ⏩",
+			"pausedSong": "pausou a música! ⏸",
+			"unPausedSong": "resumiu a música! ▶",
+			"unMutedSong": "desmutou a música! 🔊",
+			"mutedSong": "mutou a música! 🔇",
+			"liveNotSupported": "Livestreams não são suportadas!",
+			"decreasedVolume": "baixou o volume, o volume agora é **{queueVolume}%** 🔉",
+			"increasedVolume": "aumentou o volume, o volume agora é **{queueVolume}%** 🔊",
+			"loopMode": {
+				"text": "o **Modo de Repetição** está {queueLoopMode}",
+				"on": "ligado",
+				"off": "desligado"
+			},
+			"thanks": "Obrigado por escutar música comigo!",
+			"likeMe": "Gostando de mim?",
+			"stoppedNonPremium": "Me patrocine no **[patreon](https://noid.one/patreon)** para eu melhorar ainda mais meus serviços e oferecer a melhor música ❤️",
+			"errors": {
+				"error": "Houve um erro ao executar esta ação!",
+				"notinsamechannel": "Você deve estar em um canal de voz para isso!"
+			},
+			"favedSong": "adicionou esta música à sua lista de favoritos!"
+		},
+		"functions": {
+			"suggestion": {
+				"suggestion": "Sugestão",
+				"approved": "Aprovado por um total de **{totalVotes}** votos pelos membros!",
+				"approvedByAdm": "Aprovado por <@!{admID}>!",
+				"denied": "Sugestão negada por <@!{admID}>!"
+			},
+			"toDo": {
+				"description": "**Descrição**",
+				"limitDate": "**Data limite**",
+				"statusPending": "Pendente",
+				"statusFinalized": "Concluído!",
+				"statusCancelled": "Cancelado!"
+			}
+		}
+	},
+	"command": {
+		"ascii": {
+			"help": {
+				"category": "Diversão",
+				"description": "Transforma um texto em ASCII",
+				"example": "ascii {texto}"
+			},
+			"errors": {
+				"notext": "Você precisa informar um texto para converter para ASCII!",
+				"toolongtext": "O texto é muito longo, tente algo menor!",
+				"error": "Houve um erro ao escrever seu ASCII!"
+			}
+		},
+		"bal": {
+			"help": {
+				"category": "Economia",
+				"description": "Veja as suas informações bancárias ou de outros membros",
+				"example": "bal"
+			},
+			"responses": {
+				"description": "<@!{userID}> tem **{amount}** noid coins em sua conta bancária neste servidor!"
+			}
+		},
+		"baltop": {
+			"help": {
+				"category": "Economia",
+				"description": "Mostra os membros do servidor que possuem mais dinheiro",
+				"example": "baltop"
+			},
+			"responses": {
+				"embed": {
+					"title": "Lista de membros mais ricos",
+					"description": "Top 10 líderes mais ricos do servidor"
+				}
+			}
+		},
+		"bet": {
+			"help": {
+				"category": "Economia",
+				"description": "Aposte seu dinheiro aqui, talvez você fique pobre",
+				"example": "bet"
+			},
+			"responses": {
+				"noAmount": "Específique a quantia que você quer apostar | bet {cor} {quantia}",
+				"notAvaliable": "Você está apostando mais do que você tem!",
+				"colorbad": "Espefífique a cor | Vermelho [1.5x] Preto [2x] Verde [15x]",
+				"green": "**Multiplicador 15X** | Você ganhou {money} noid coins!",
+				"red": "**Multiplicador 1.5X** | Você ganhou {money} noid coins!",
+				"black": "**Multiplicador 2X** | Você ganhou {money} noid coins!",
+				"lost": "**Multiplicador 0X** | Você perdeu {money} noid coins!",
+				"max": "O limite máximo de apostas é de **1500** Noid coins!",
+				"timeout": "Você deve esperar {seconds}s para apostar novamente."
+			}
+		},
+		"bigtext": {
+			"help": {
+				"category": "Diversão",
+				"description": "Transforma um texto em emoji",
+				"example": "bigtext {texto}"
+			},
+			"errors": {
+				"notext": "Você precisa informar um texto para converter!",
+				"error": "Ocorreu um erro ao enviar a mensagem!"
+			}
+		},
+		"blurpify": {
+			"help": {
+				"category": "Diversão",
+				"description": "Blurpifica o seu avatar ou de alguém",
+				"example": "blurpify @pessoa"
+			},
+			"errors": {
+				"error": "Aconteceu um erro ao executar esta ação!"
+			}
+		},
+		"botinfo": {
+			"help": {
+				"category": "Bot",
+				"description": "Mostra as informações do bot",
+				"example": "botinfo"
+			},
+			"responses": {
+				"links": "[Servidor de Suporte]({support_guild}) | [Me Adicionar]({bot_invite}) | [Patreon]({patreon_link})",
+				"description": "O bot NoIdentity possibilita que você tenha todos os recursos de um bot pago de forma gratuita.",
+				"extrainfo": {
+					"title": "Informações Extras:",
+					"description": "Desenvolvedor: ** {bot_owner} ** | Fui Criado Em: **18/11/2020**"
+				}
+			}
+		},
+		"btremove": {
+			"help": {
+				"category": "Moderação",
+				"description": "Remove alguém do baltop",
+				"example": "btr <id ou @>"
+			},
+			"noperms": "Você não possue permissões para isso!",
+			"nouser": "Você deve mencionar ou indicar um ID de usuário para eu deletar!",
+			"err": "Houve um erro ao executar esta ação, talvez este usuário já não possue uma conta bancária!",
+			"cancel": "Você cancelou a limpeza de dados deste usuário!",
+			"cleaned": "Você limpou as informações de <@!{userToDeleteId}>!",
+			"really": "Você tem certeza que deseja deletar a conta bancária de <@!{userToDeleteId}> neste servidor ?"
+		},
+		"changemymind": {
+			"help": {
+				"category": "Diversão",
+				"description": "Faz um photoshop com o changemymind",
+				"example": "changemymind {texto}"
+			}
+		},
+		"cleanup": {
+			"help": {
+				"category": "Moderação",
+				"description": "Limpa o nível e pontos de membros inativos por mais de 3 meses",
+				"example": "cleanup"
+			},
+			"errors": {
+				"noperm": "Você não possue permissões para isso!"
+			},
+			"responses": {
+				"description": "Limpei o nível de **{removedLength}** usuários inativos por mais de 3 meses."
+			}
+		},
+		"cleanupeconomy": {
+			"help": {
+				"category": "Moderação",
+				"description": "Limpa os membros inativos mais de 3 meses ou que não estão mais no servidor da lista de economia.",
+				"example": "cleanupeconomy"
+			},
+			"errors": {
+				"noperm": "Você não possue permissões para isso!"
+			},
+			"responses": {
+				"description": "Limpei a conta bancária de **{removedLength}** usuários inativos por mais de 3 meses ou que não estavam no servidor."
+			}
+		},
+		"daily": {
+			"help": {
+				"category": "Economia",
+				"description": "Pega sua diária",
+				"example": "daily"
+			},
+			"responses": {
+				"collected": "Você coletou sua diária, agora você tem mais **${amount}** em sua conta!"
+			},
+			"errors": {
+				"timeLeft": "Você ainda não pode pegar sua diária ainda! Faltam **{hours}h, {minutes}m e {seconds}s**."
+			}
+		},
+		"level": {
+			"help": {
+				"category": "Níveis",
+				"description": "Mostra seu nível e pontos no servidor",
+				"example": "level"
+			},
+			"responses": {
+				"description": "tem **{points}** pontos e está no nível **{level}**!"
+			}
+		},
+		"levelconfig": {
+			"help": {
+				"category": "Níveis",
+				"description": "Configura o sistema de level em seu servidor",
+				"example": "levelconfig"
+			},
+			"responses": {
+				"canceledAction": "Você cancelou esta ação!",
+				"desativate": "Você desativou o sistema de níveis neste servidor!",
+				"activate": "Você ativou o sistema de níveis neste servidor!",
+				"wantDeactivate": "Você deseja desativar a função de níveis neste servidor?",
+				"wantActivate": "Você deseja ativar a função de níveis neste servidor?"
+			}
+		},
+		"favsongs": {
+			"help": {
+				"category": "Música",
+				"description": "Mostra suas músicas favoritas",
+				"example": "favsongs"
+			},
+			"errors": {
+				"zeroSongs": "Este usuário não possue nenhuma música favoritada!"
+			},
+			"responses": {
+				"title": "Lista de músicas favoritas"
+			}
+		},
+		"graphics": {
+			"help": {
+				"category": "Diversos",
+				"description": "Mostra estatísticas sobre o servidor",
+				"example": "graphics"
+			},
+			"whatyouwant": "Qual gráfico você deseja ver?",
+			"msg": "Mensagens",
+			"members": "Fluxo de Membros",
+			"bans": "Bans",
+			"site": "Site",
+			"commands": "Comandos Usados",
+			"messages": "Mensagens Enviadas",
+			"msg_title": "Gráfico de mensagens enviadas no servidor / Comandos usados no servidor",
+			"joined_members": "Membros que entraram",
+			"leave_members": "Membros que saíram",
+			"members_title": "Fluxo de membros neste servidor",
+			"bannedMembers": "Membros Banidos",
+			"unbannedMembers": "Membros Desbanidos",
+			"bans_title": "Membros Banidos / Membros Desbanidos",
+			"page_visits": "Visitas na página do site",
+			"page_refers": "Pessoas que clicaram no convite pelo site",
+			"votes": "Votos",
+			"page_flow_title": "Fluxo do servidor em noid.one/g/{GUILDID}"
+		},
+		"gift": {
+			"help": {
+				"category": "Economia",
+				"description": "Envie presentes para as pessoas com um bonus de 10%",
+				"example": "gift <@user> <quantia>"
+			},
+			"responses": {
+				"timeout": "Você deve esperar {minutes}min e {seconds}s para enviar um presente novamente.",
+				"sent": "Você enviou um presente à <@!{toID}>, para ele(a) resgatar esta pessoa deve acessar este link:\n ||https://noid.one/gift/{ID}|| (Confidencial)",
+				"wNotification": "Você gostaria que eu enviasse uma notificação à está pessoa?",
+				"sentYou": "Você recebeu um presente de `{author}` acesse: https://noid.one/gift/{ID} para resgatá-lo.",
+				"dontNotify": "Você decidiu não notificar este usuário. Envie este à ele(a) o link que eu te mandei ali em cima. 👆",
+				"withoutOwner": "Você criou um presente sem dono, qualquer pessoa com este link poderá resgatá-lo:\n ||https://noid.one/gift/{ID}|| (Confidencial)",
+				"warn": "Você criou um presente público. Não compartilhe ele publicamente pois qualquer pessoa pode resgatá-lo",
+				"alreadyExists": "Tente novamente, houve um erro e já existe um presente com este ID.",
+				"notEnoughMoney": "Você não dinheiro suficiente!",
+				"youvesent": "Você enviou um presente à <@!{toID}>"
+			},
+			"errors": {
+				"noUser": "Você deve dizer para quem quer enviar o presente!",
+				"invalidUser": "Usuário mencionado é inválido!",
+				"amountInvalid": "Valor inválido!"
+			}
+		},
+		"help": {
+			"help": {
+				"category": "Bot",
+				"description": "Mostra os comandos do bot",
+				"example": "help"
+			},
+			"responses": {
+				"description": "Digite *{prefix}help <comando>* para ver informações detalhadas sobre algum comando.",
+				"command": {
+					"title": "Informações sobre o comando: *{commandName}*",
+					"cat": "Categoria",
+					"description": "Descrição",
+					"usage": "Exemplo",
+					"aliases": "Variações"
+				}
+			}
+		},
+		"lang": {
+			"help": {
+				"category": "Moderação",
+				"description": "Altera a língua na qual eu responderei meus comandos",
+				"example": "lang"
+			},
+			"errors": {
+				"error": "Houve um erro ao executar este comando!",
+				"timeout": "Sem tempo restante, use o comando novamente se você ainda quer trocar minha língua."
+			},
+			"responses": {
+				"description": "Estou configurado para falar em **{actual_lang}** neste servidor. \n Se você quiser pode alterar através das reações abaixo.",
+				"langDescription": "Clique na reação para alterar a língua do servidor.",
+				"changed": "Você alterou a língua do servidor para **{lang}**.\n Caso você queira alterar novamente digite: **n!lang**"
+			}
+		},
+		"leaderboard": {
+			"help": {
+				"category": "Níveis",
+				"description": "Mostra os membros do servidor que possuem mais nível",
+				"example": "leaderboard"
+			},
+			"responses": {
+				"embed": {
+					"title": "Lista de liderança",
+					"description": "Nossos top 10 líderes em pontos",
+					"points": "pontos",
+					"level": "Nível"
+				}
+			}
+		},
+		"loop": {
+			"help": {
+				"category": "Música",
+				"description": "Ativa o modo de repetição",
+				"example": "loop"
+			},
+			"errors": {
+				"noqueue": "Não há nada tocando atualmente! ❌",
+				"notsamechannel": "Você deve estar em um canal de voz para isso!"
+			},
+			"responses": {
+				"res": " o **Modo de Repetição** está {mode}!",
+				"modes": {
+					"on": "ligado",
+					"off": "desligado"
+				}
+			}
+		},
+		"lyrics": {
+			"help": {
+				"category": "Música",
+				"description": "Mostra a letra da música que está reproduzindo",
+				"example": "lyrics"
+			},
+			"errors": {
+				"noqueue": "Não há nada tocando atualmente! ❌",
+				"notfound": "Nenhuma letra foi encontrada sobre {title}"
+			},
+			"response": {
+				"title": "Letra: {title}"
+			}
+		},
+		"salary": {
+			"help": {
+				"category": "Economia",
+				"description": "Pegue seu salário",
+				"example": "salary"
+			},
+			"errors": {
+				"timeLeft": "Você ainda não pode receber o dinheiro do seu salário! **{days}d, {hours}h, {minutes}m e {seconds}s** restantes."
+			},
+			"responses": {
+				"collected": "Você coletou o dinheiro do seu salário, agora você tem mais **${amount}** em sua conta!"
+			}
+		},
+		"magik": {
+			"help": {
+				"category": "Diversão",
+				"description": "Faz um photoshop estilo magik em alguém",
+				"example": "magik @pessoa"
+			}
+		},
+		"nowplaying": {
+			"help": {
+				"category": "Música",
+				"description": "Mostra música em reprodução",
+				"example": "np"
+			},
+			"errors": {
+				"noqueue": "Não há nada tocando atualmente! ❌"
+			},
+			"responses": {
+				"playing": "Reproduzindo",
+				"remain_time": "Tempo restante:"
+			}
+		},
+		"pay": {
+			"help": {
+				"category": "Economia",
+				"description": "Pague alguém com seu dinheiro",
+				"example": "pay <@user> <quantia>"
+			},
+			"responses": {
+				"paid": "Você pagou **${amount}** à <@!{toUserID}>!"
+			},
+			"errors": {
+				"nomention": "Você deve mencionar alguém para enviar o dinheiro!",
+				"noamount": "Você deve dizer quanto dinheiro você deseja enviar!",
+				"userdoesnthavemoney": "Você precisa ter mais **{neededAmount}** para fazer isso!",
+				"isnan": "O valor da transferência deve ser um número natural válido!",
+				"bot": "Você não pode dar dinheiro à um robô!"
+				
+			}
+		},
+		"pause": {
+			"help": {
+				"category": "Música",
+				"description": "Pausa a música reproduzindo",
+				"example": "pause"
+			},
+			"errors": {
+				"noqueue": "Não há nada tocando atualmente! ❌",
+				"notinsamechannel": "Você deve estar no mesmo canal de voz que eu para isso!"
+			},
+			"responses": {
+				"paused": "pausou a música! ⏸"
+			}
+		},
+		"ping": {
+			"help": {
+				"category": "Bot",
+				"description": "Mostra a latência do bot",
+				"example": "ping"
+			},
+			"responses": {
+				"description": "🏓 Meu tempo de resposta é **{ping}**ms. E o tempo de resposta do Discord é de **{api_ping}**ms."
+			}
+		},
+		"play": {
+			"help": {
+				"category": "Música",
+				"description": "Reproduz músicas do Youtube",
+				"example": "play <nome da musica | url>"
+			},
+			"errors": {
+				"nochannel": "Você deve estar em um canal de voz para isso!",
+				"notsamechannel": "Você deve estar no mesmo canal de voz que eu.",
+				"noargs": "Utilize: {prefix}play <Nome do vídeo | URL do Youtube>",
+				"noperms": {
+					"CONNECT": "Não posso conectar a canais de voz, faltam permissões!",
+					"SPEAK": "Não posso tocar neste canal de voz, faltam permissões!"
+				},
+				"notfound": "Nenhum conteúdo foi encontrado neste URL.",
+				"redirecting": "Seguindo redirecionamento do URL...",
+				"channelNotFound": "Não consegui entrar no canal de voz!",
+				"notValidSource": "Eu só aceito links do Youtube",
+				"onlyForPremiums": "<:spotify:794266907939307572> | Você deve fazer parte do meu **[Patreon](https://noid.one/patreon)** para escutar músicas do Spotify."
+			},
+			"responses": {
+				"addedToQueue": "✅ **{songTitle}** foi adicionado na playlist por "
+			}
+		},
+		"playlist": {
+			"help": {
+				"category": "Música",
+				"description": "Reproduz uma playlist do youtube",
+				"example": "playlist {Nome da playlist | URL da playlist}"
+			},
+			"errors": {
+				"noargs": "Utilize: {prefix}play <Nome do vídeo | URL do Youtube>",
+				"nochannel": "Você deve estar em um canal de voz para isso!",
+				"noperms": {
+					"CONNECT": "Não posso conectar a canais de voz, faltam permissões!",
+					"SPEAK": "Não posso tocar neste canal de voz, faltam permissões!"
+				},
+				"notsamechannel": "Você deve estar no mesmo canal que eu para isso!",
+				"playlist_notfound": "Playlist não encontrada! :(",
+				"error": "Houve um erro ao executar esta ação!",
+				"playlistTooLong": "Playlist maior que o permitido...",
+				"thereIsAnError": "Não pude entrar no canal de voz, erro:"
+			},
+			"responses": {
+				"importing_playlist": "⌛ Importando playlist...",
+				"playlistAddedToQueue": "sua playlist foi adicionada a lista de reprodução!"
+			}
+		},
+		"profile": {
+			"help": {
+				"category": "Diversos",
+				"description": "Mostra um card de perfil.",
+				"example": "profile {@membro}"
+			},
+			"responses": {
+				"dev": "Desenvolvedor",
+				"bughunter": "Bughunter",
+				"premium": "Patrocinador",
+				"textNeeded": "Você possue {current}XP e você precisa de mais {needed}XP!"				
+			}
+		},
+		"purge": {
+			"help": {
+				"category": "Moderação",
+				"description": "Apaga as mensagem em um canal",
+				"example": "purge {número-de-mensagens}"
+			},
+			"errors": {
+				"amountSizeErr": "Você deve selecionar entre 1 ou 100 mensagens!",
+				"permErr": "Você não possui permissões pra isso!"
+			},
+			"responses": {
+				"description": "Apaguei **{deleteAmount}** no canal"
+			}
+		},
+		"queue": {
+			"help": {
+				"category": "Música",
+				"description": "Mostra a playlist atual",
+				"example": "queue"
+			},
+			"errors": {
+				"noPerm": "Faltam permissões para adicionar reações!",
+				"noqueue": "Não há nada tocando atualmente! ❌"
+			},
+			"responses": {
+				"actualPage": "**Página atual - {currentPage}/{embedLength}**",
+				"queueTitle": "Lista de reprodução",
+				"actualSong": "**Música atual - [{actualSongTitle}]({actualSongURL})**\n\n{Info}"
+			}
+		},
+		"rep": {
+			"help": {
+				"category": "Diversos",
+				"description": "Dá um ponto de reputação à uma pessoa.",
+				"example": "rep @user"
+			},
+			"responses": {
+				"timeout": "⏰ | Você deve esperar {hours}hrs e {minutes}min para dar reputação à alguém.",
+				"notamember": "Este usuário mencionado não é um membro deste servidor.",
+				"reppremium": "<:wumpus_star:794707740198043668> | Você deu **+2** pontos de à <@!{userID}> por ser um membro Premium.",
+				"reps": "Você deu **+1** pontos de reputação à <@!{userID}>",
+				"nouser": "Você deve mencionar alguém para dar reputação!",
+				"notsame": "Você não pode dar reputação à si mesmo!"
+			}
+		},
+		"remove": {
+			"help": {
+				"category": "Música",
+				"description": "Remove música da playlist",
+				"example": "remove <número da música na playlist>"
+			},
+			"errors": {
+				"noqueue": "Não há nada tocando atualmente! ❌",
+				"notsamechannel": "Você deve estar em um canal de voz para isso!",
+				"noargs": "Utilize: {prefix}remove <Número da música na lista de reprodução>"
+			},
+			"responses": {
+				"first_response": "removeu **{x}** da lista de reprodução! ❌"
+			}
+		},
+		"remfavsongs": {
+			"help": {
+				"category": "Música",
+				"description": "Remove músicas da sua lista de favoritos",
+				"example": "rf <número da música na sua lista>"
+			},
+			"didit": "Removi estas músicas da sua lista de favoritas",
+			"noargs": "Você deve dizer quais músicas quer remover dos seus favoritos",
+			"nofavs": "Você não possue músicas para serem removidas.",
+			"notesongs": "Você não possue esta música nos seus favoritos!"
+		},
+		"resume": {
+			"help": {
+				"category": "Música",
+				"description": "Reproduz novamente a música pausada",
+				"example": "resume"
+			},
+			"errors": {
+				"noqueue": "Não há nada tocando atualmente! ❌",
+				"notsamechannel": "Você deve estar em um canal de voz para isso!",
+				"notpaused": "A playlist não está pausada!"
+			},
+			"responses": {
+				"description": "resumiu a música! ▶"
+			}
+		},
+		"reset": {
+			"help": {
+				"category": "Moderação",
+				"description": "Reseta algumas opções do banco de dados do bot em seu servidor.",
+				"example": "reset"
+			},
+			"responses": {
+				"title": "O que você quer resetar neste servidor ?",
+				"lvlList": "Lista de levels",
+				"economyEconomy": "Lista de economia",
+				"guildConfigs": "Configurações do servidor",
+				"reset": {
+					"levels": "Você realmente deseja resetar os níveis deste servidor?",
+					"economy": "Você realmente deseja resetar a economia deste servidor?",
+					"configs": "Você realmente deseja resetar as configurações deste servidor?"
+				},
+				"lvlClear": "Limpei **{usersSize}** usuários da lista de levels!",
+				"economy": "Limpei **{usersSize}** usuários da lista de economia!",
+				"website": "Você deve fazer isto em meu site:",
+				"canceled": "Você cancelou esta ação!"
+			}
+		},
+		"serverconfig": {
+			"help": {
+				"category": "Moderação",
+				"description": "Mostra as configurações do seu servidor",
+				"example": "serverconfig"
+			},
+			"responses": {
+				"title": "Configurações do Servidor",
+				"prefix": "Prefixo",
+				"language": "Língua",
+				"radio_channel": "Canal de música",
+				"welcome_channel": "Canal de boas vindas",
+				"welcome_message": "Mensagem de boas vindas",
+				"welcome_role": "Cargo recebido ao entrar",
+				"news_channel": "Canal de anúncios",
+				"editable": "Você pode alterar estas configurações através do [Meu Site]"
+			}
+		},
+		"serverinfo": {
+			"help": {
+				"category": "Diversos",
+				"description": "Mostra as informações do servidor",
+				"example": "serverinfo"
+			},
+			"responses": {
+				"regions": {
+					"brazil": "Brasil",
+					"europe": "Europa",
+					"hongkong": "Hong Kong",
+					"india": "India",
+					"japan": "Japão",
+					"russia": "Rússia",
+					"singapore": "Singapura",
+					"southafrica": "África do Sul",
+					"sydney": "Sidney",
+					"us-central": "USA Central",
+					"us-east": "USA Leste",
+					"us-west": "USA Oeste",
+					"us-south": "USA Sul"
+				},
+				"filterLevels": {
+					"ALL_MEMBERS": "Se aplica a todos",
+					"MEMBERS_WITHOUT_ROLES": "Somente para pessoas sem cargo",
+					"DISABLED": "Desligado"
+				},
+				"verificationLevels": {
+					"NONE": "Nenhum",
+					"LOW": "Baixo",
+					"MEDIUM": "Médio",
+					"HIGH": "Alto",
+					"VERY_HIGH": "Muito Alto"
+				},
+				"embed": {
+					"title": "Informações",
+					"name": "Nome",
+					"id": "ID",
+					"region": "Região",
+					"owner": "Dono(a)",
+					"premiumTier": {
+						"title": "Nível de boosts",
+						"level": "Nível",
+						"none": "Nenhum"
+					},
+					"premiumSubscriptionCount": "Quantia de boosts",
+					"moderation": "Moderação",
+					"verificationLevel": "Nível de verificação",
+					"filterLevel": "Filtro de mídia",
+					"createdAt": {
+						"title": "Data de criação",
+						"at": "ás"
+					},
+					"stats": {
+						"title": "Estatísticas",
+						"roles": "Cargos",
+						"emojis": "Emojis",
+						"members": "Membros",
+						"channels": "Canais"
+					},
+					"activity": {
+						"title": "Atividade",
+						"online": "Online",
+						"idle": "Ausente",
+						"dnd": "Não perturbe",
+						"offline": "Offline"
+					}
+				}
+			}
+		},
+		"site": {
+			"help": {
+				"category": "Bot",
+				"description": "Mostra o site do bot",
+				"example": "site"
+			}
+		},
+		"ship": {
+			"help": {
+				"category": "Diversão",
+				"description": "Shippa duas pessoas",
+				"example": "ship {@membro} {@membro2}"
+			},
+			"errors": {
+				"nottwomembers": "Você deve mencionar duas pessoas!",
+				"error": "Aconteceu um erro ao executar esta ação!"
+			}
+		},
+		"shuffle": {
+			"help": {
+				"category": "Música",
+				"description": "Ativa o modo aleatório de reprodução",
+				"example": "shuffle"
+			},
+			"errors": {
+				"noqueue": "Não há nada tocando atualmente! ❌",
+				"notinsamechannel": "Você deve estar no mesmo canal de voz que eu para isso!"
+			},
+			"responses": {
+				"description": "misturou a playlist de forma aleatória. 🔀"
+			}
+		},
+		"skip": {
+			"help": {
+				"category": "Música",
+				"description": "Pula a música atual",
+				"example": "skip"
+			},
+			"errors": {
+				"noqueue": "Não há nada tocando atualmente! ❌",
+				"notinsamechannel": "Você deve estar no mesmo canal de voz que eu para isso!"
+			},
+			"responses": {
+				"description": "pulou a música ⏭"
+			}
+		},
+		"skipto": {
+			"help": {
+				"category": "Música",
+				"description": "Pula para uma determinada posição na fila",
+				"example": "skipto {número da música na playlist}"
+			},
+			"errors": {
+				"noqueue": "Não há nada tocando atualmente! ❌",
+				"notinsamechannel": "Você deve estar no mesmo canal de voz que eu para isso!",
+				"noargs": "A playlist tem **{queueLength}** músicas!",
+				"cant": "Você não pode pular pra música que você já está ouvindo bobinho(a).",
+				"isntnumber": "Você deve utilizar somente números.",
+				"how": "Utilize: skipto <número da musica que você quer pular para>"
+			},
+			"responses": {
+				"description": "pulou para a música **#{songSkipped}** ⏭"
+			}
+		},
+		"stats": {
+			"help": {
+				"category": "Bot",
+				"description": "Mostra as estatísticas do bot",
+				"example": "stats"
+			},
+			"responses": {
+				"time": {
+					"days": "dias",
+					"hours": "h",
+					"minutes": "m",
+					"seconds": "s"
+				},
+				"embed": {
+					"title": "Estatísticas",
+					"memory": "Uso de memória",
+					"uptime": "Tempo ativo",
+					"users": "Usuários",
+					"servers": "Servidores",
+					"channels": "Canais",
+					"version": "Versão",
+					"time_taken": "Tempo tomado"
+				}
+			}
+		},
+		"stop": {
+			"help": {
+				"category": "Música",
+				"description": "Para a música e limpa a lista de reprodução",
+				"example": "stop"
+			},
+			"errors": {
+				"noqueue": "Não há nada tocando atualmente! ❌",
+				"notinsamechannel": "Você deve estar no mesmo canal de voz que eu para isso!"
+			},
+			"responses": {
+				"description": "parou a música! ⏹"
+			}
+		},
+		"trumptweet": {
+			"help": {
+				"category": "Diversão",
+				"description": "Cria um tweet como se fosse o trump",
+				"example": "trumptweet {texto}"
+			},
+			"errors": {
+				"err": "Aconteceu um erro ao executar esta ação!",
+				"textoolong": "Este texto é longo demais! Tente algo mais curto!",
+				"notext": "Você precisa informar um texto para isso!"
+			}
+		},
+		"userinfo": {
+			"help": {
+				"category": "Diversos",
+				"description": "Mostra as informações de um usuário",
+				"example": "userinfo"
+			},
+			"errors": {
+				"error": "Houve um erro ao ver as informações pedidas."
+			},
+			"responses": {
+				"isntBooster": "Não é booster",
+				"boosterSince": "Booster desde",
+				"bot": "Bot",
+				"user": "Usuário",
+				"tag": "Tag",
+				"ID": "ID",
+				"nickname": "Apelido",
+				"none": "Nenhum",
+				"accountType": "Tipo de conta",
+				"createdAt": "Criou sua conta",
+				"member": "Membro",
+				"joinedAt": "Entrou em",
+				"badges": "Badges",
+				"roles": "Cargos",
+				"activity": {
+					"title": "Atividade",
+					"playing": "Jogando",
+					"listening": "Escutando",
+					"status": "Status",
+					"error": "Não pude encontrar o que este usuário está fazendo",
+					"details": "Detalhes",
+					"url": "URL"
+				},
+				"aboutWho": "Informações sobre {member}"
+			}
+		},
+		"volume": {
+			"help": {
+				"category": "Música",
+				"description": "Altera o volume da música tocando",
+				"example": "volume 0/100"
+			},
+			"errors": {
+				"noqueue": "Não há nada tocando atualmente! ❌",
+				"notinsamechannel": "Você deve estar no mesmo canal de voz que eu para isso!",
+				"noargs": "Volume atual é: **{actualVolume}%** 🔊",
+				"isNaN": "Utilize algum número entre 0/100."
+			},
+			"responses": {
+				"description": "alterou o volume para **{volumeX}%** 🔊"
+			}
+		},
+		"vote": {
+			"help": {
+				"category": "Bot",
+				"description": "Checa se você ou outra pessoa já votou no bot no site Top.gg",
+				"example": "vote"
+			},
+			"responses": {
+				"youVoted": "Você já votou em mim nas últimas **12 horas**! Muito obrigado!",
+				"youDidNotVote": "Você ainda não votou em mim nas últimas **12 horas** <:topgg:796784876610256928>. Vote [Aqui](https://top.gg/bot/{botID}/vote?ref=botCommand)",
+				"userVoted": "já votou em mim nas últimas **12 horas**! Muito obrigado!",
+				"userDidNotVote": "ainda não votou em mim nas últimas **12 horas** <:topgg:796784876610256928>. Vote [Aqui](https://top.gg/bot/{botID}/vote?ref=botCommand)"
+			}
+		},
+		"weather": {
+			"help": {
+				"category": "Diversos",
+				"description": "Diz a previsão do clima de um local",
+				"example": "clima {local}"
+			},
+			"responses": {
+				"skytext": {
+					"MostlySunny": "Ensolarado",
+					"Sunny": "Ensolarado",
+					"LightRain": "Chuva fraca",
+					"Rainny": "Chuvoso",
+					"Snow": "Nevando",
+					"MostlyCloudy": "Nublado",
+					"Cloudy": "Nublado",
+					"Haze": "Névoa",
+					"PartlySunny": "Parcialmente Ensolarado",
+					"RainShowers": "Gotas de chuva"
+				},
+				"weather_forecast": "Previsão do tempo em",
+				"time_zone": "Fuso horário",
+				"degreeType": "Tipo de grau",
+				"temperature": "Temperatura",
+				"wind": "Vento",
+				"feelsLike": "Sensação térmica",
+				"humidity": "Humidade"
+			},
+			"errors": {
+				"noargs": "*Diga o local que você queira!*",
+				"notfound": "*Não encontrei este local!*",
+				"error": "*Houve um erro ao procurar o clima*"
+			}
+		},
+		"work": {
+			"help": {
+				"category": "Economia",
+				"description": "Trabalhe a cada 6 horas para receber seu dinheiro",
+				"example": "work"
+			},
+			"responses": {
+				"collected": "Já que você trabalhou, você recebeu mais **${amount}** em sua conta!"
+			},
+			"errors": {
+				"timeLeft": "Você ainda não pode trabalhar ainda! Faltam **{hours}h, {minutes}m e {seconds}s**."
+			}
+		},
+		"support": {
+			"help": {
+				"category": "Suporte",
+				"description": "Contate o suporte do bot",
+				"example": "support"
+			}
+		}
+	}
+}

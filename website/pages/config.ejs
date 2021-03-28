@@ -1,0 +1,102 @@
+<%- include('blocks/header', {client: client, auth: auth, user: user, permissions: permissions, finalObject: finalObject, finalObjectType: finalObjectType, page: page, i18n: i18n, lang: lang}) %>
+
+<div class="container">
+    <div class="obj-container obj-profile">
+        <% if(finalObjectType == 'guild') { %>
+            <img class="obj-icon" src="https://cdn.discordapp.com/icons/<%= finalObject.id %>/<%= finalObject.icon %>.jpg?size=512"/>
+            <h1><%= finalObject.name %></h1>
+            <p><span><%= finalObject.memberCount%> Membros</span> <!-- | <span>Dono(a) finalObject.owner.user.tag </span>--></p>
+    
+        <% } else if(finalObjectType == 'user') { %>
+            <img class="obj-icon" src="https://cdn.discordapp.com/avatars/<%= user.id %>/<%= user.avatar %>.png?size=512"/>
+            <h1><%= finalObject.username %></h1>
+    
+        <% } else { %>
+            <span class="obj-not-found">Não encontrado</span>
+        <% }; %>
+    </div>
+
+    <% if(finalObjectType == 'guild') { %>
+        <div class="obj-container obj-opt">
+            <form method="post">
+                <% const settings = client.settings.get(finalObject.id).custom_configs; %>
+                <% for (const key in settings) { %>
+                    <div class="obj-option-guild">
+                        <%
+                            const opt_name = key
+                                            .replace('prefix', 'Prefixo dos meus comandos')
+                                            .replace('lang', `Língua (${client.languages.join(', ')})`)
+                                            .replace('radio_channelID', 'Canal de voz padrão para música (ID)')
+                                            .replace('report_channelID', 'Canal de reports (ID)')
+                                            .replace('welcome_channelID', 'Canal de boas vindas (ID)')
+                                            .replace('welcome_message', 'Mensagem de boas vindas')
+                                            .replace('welcome_roleID', 'Cargo dado ao membro quando entrar (ID)')
+                                            .replace('news_channelID', 'Canal de anúncios (ID)')
+                                            .replace('levelup_channelID', 'Canal para anúnciar levelups (ID)')
+                                            .replace('levels', 'Sistema de nível')
+                                            .replace('toDoChannelID', 'Canal de afazeres (ID)')
+                                            .replace('secondToDoChannelID', 'Segundo canal de afazeres (ID)')
+                                            .replace('suggestionChannelID', 'Canal de sugestões (ID)')
+                                            .replace('minimumSuggestionVotesToApprove', 'Quantia mínima de votos para uma sugestão ser aprovada.')
+                                            .replace('suggestionApproveRoles', 'Cargo que poderá aprovar as sugestões (ID)')
+                                            .replace('custom_approved_emojiID', 'Emoji para aprovar sugestões (ID)')
+                                            .replace('custom_downvote_emojiID', 'Emoji para para Downvotes (ID)')
+                                            .replace('custom_upvotes_emojiID', 'Emoji para Upvotes (ID)')
+                                            .replace('level_blacklistedChannels', 'Canais ignorados pelo sistema de nível (ID)')
+                                            .replace('memberCounterText', 'Texto no tópico do contador. Use {{counter}} dentro do texto')
+                                            .replace('memberCountChannel', 'Canal do contador (ID)')
+                        %>
+                        <label class="obj-option-text" for="<%= key %>"><%= opt_name %></label>
+                        <% if(key !== 'levels') { %>
+                            <input type="text" class="obj-input-space obj-input-design" autocomplete="off" id="<%= key %>" name="<%= key %>" placeholder="Digite <%= opt_name %>" value="<%= settings[key] %>">
+                        <% } else { %>
+                            <% if(settings.levels) { %>
+                                <input type="checkbox" class="obj-input-space obj-input-design obj-input-checkbox" autocomplete="off" id="<%= key %>" name="<%= key %>" value="<%= settings[key] %>" checked>
+                            <% } else { %>
+                                <input type="checkbox" class="obj-input-space obj-input-design obj-input-checkbox" autocomplete="off" id="<%= key %>" name="<%= key %>" value="<%= settings[key] %>">
+                            <% } %>
+                        <% } %>
+                    </div>
+                <% } %>
+                <button type="submit" class="obj-submit-btn">Salvar</button>
+            </form>
+        </div>
+    <% } else if(finalObjectType == 'user') { %>
+        <% let userID = finalObject.id %>
+        <div class="obj-container obj-opt">
+            <form method="post">
+                <% const profile = client.usersdata.get(userID).profile; %>
+                <% for (const option in profile) { %>
+                <% 
+                    const option_name = option
+                    .replace('realName', 'Nome real')
+                    .replace('bio', 'Biografia')
+                    .replace('birthday', 'Aniversário')
+                    .replace('role', 'Ocupação')
+                    .replace('email', 'Email')
+                    .replace('cardBackground', 'Fundo de perfil do comando n!profile (Deve ser do Imgur.com)')
+                    
+                %>
+
+                    <% if(option !== `birthday` && option !== `lastVote` && option !== `logs` && option !== `gifts` && option !== `fav_songs` && option !== 'role' && option !== 'money'
+                            && option !== `reps` && option !== `store_items` && option !== `hugs` && option !== `kisses` && option !== `votes` && option !== 'siteProfileBackground' && option !== 'cardBackground'
+                            && option !== 'relation_ship'
+                        ) { %>
+                        <div class="obj-option-user">
+                            <label class="obj-option-text" for="<%= option %>"><%= option_name %></label>
+                            <input type="text" autocomplete="off" class="obj-input-space obj-input-design" id="<%= option %>" name="<%= option %>" placeholder="Digite <%= option_name %>" value="<%= profile[option] %>">
+                        </div>
+                    <% } else if(option == `birthday`) { %>
+                        <div class="obj-option-user">
+                            <label class="obj-option-text" for="<%= option %>"><%= option_name %></label>
+                            <input type="date" max="2017-04-30" autocomplete="off" class="obj-input-space obj-input-design" id="<%= option %>" name="<%= option %>" placeholder="Digite <%= option_name %>" value="<%= profile[option] %>">
+                        </div>
+                    <% } %>
+                <% }; %>
+                <button type="submit" class="obj-submit-btn">Salvar</button>
+            </form>
+        </div>
+    <% } %>
+</div>
+
+<%- include('blocks/footer') %>

@@ -3,6 +3,8 @@ const Discord = require("discord.js");
 module.exports = async (client, guild) => {
     await client.settings.delete(guild.id);
   
+    if(!guild.name) return;
+
     const Embed = new Discord.MessageEmbed()
     .setColor(client.config.color)
     .setDescription(`Acabei de sair do servidor **${guild.name}**`)

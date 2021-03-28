@@ -1,0 +1,1006 @@
+{
+	"site": {
+		"navbar": {
+			"home": "Home",
+			"commands": "Commands",
+			"support_guild": "Support Server",
+			"logout": "Logout",
+			"dashboard": "Dashboard",
+			"profile": "My Profile",
+			"login": "Login"
+		},
+		"footer": {
+			"external_websites": "External Sources",
+			"pages": "Pages",
+			"languages": "Language"
+		},
+		"home": {
+			"welcome": "Welcome!",
+			"welcome_description": "Here you have the opportunity to have all the functions of your server for free!",
+			"addMe": "Add me",
+			"my_features": "My Resources",
+			"patreon": "Sponsor Me",
+			"stats": "Statistics",
+			"uptime": "Uptime",
+			"users": "Users",
+			"servers": "Servers",
+			"ran_commands": "Commands Used",
+			"features": "Features",
+			"features_list": {
+				"moderation": "Moderation",
+				"music": "Music",
+				"automation": "Automation",
+				"fun": "Fun",
+				"info": "Information"
+			},
+			"staff": "Staff",
+			"developer": "Developer"
+		},
+		"commands": {
+			"commands": "Commands",
+			"description": "Click on the command to see more information about it",
+			"seeMore": "Learn More",
+			"cat": "Category",
+			"example": "Example",
+			"desc": "Description",
+			"categories": {
+				"Diversão": "Fun",
+				"Bot": "Bot",
+				"Moderação": "Moderation",
+				"Música": "Music",
+				"Diversos": "Miscellaneous",
+				"Economia": "Economy",
+				"Níveis": "Levels",
+				"Suporte": "Support"
+			}
+		},
+		"profile": {
+			"edit": "Edit profile",
+			"xp_lvl": "Level and XP",
+			"economy":"Your economy",
+			"your_lvl": "Your level on each guild",
+			"your_xp": "Your XP on each guild",
+			"your_money": "Your money on each guild",
+			"your_bday": "Your birthday",
+			"txt": "Text",
+			"sent_msg": "Messages you sent",
+			"ran_cmds": "Commands you used",
+			"activity": "Activity",
+			"stats": "Stats",
+			"gift_redeemed": "GIFT REDEEMED",
+			"gift_received": "GIFT RECEIVED",
+			"gift_sent": "GIFT SENT",
+			"redeemedAGift": "{name} redeemed a gift you sent them.",
+			"sentYouAGift": "{name} sent you a gift.",
+			"redeem": "Redeem",
+			"youRedeemed": "You redeemed a gift {name} sent you.",
+			"youSent": "You sent a gift to {name}."
+		},
+		"dashboard": {
+			"title": "Customization Panel",
+			"see": "See",
+			"add": "Add me",
+			"edit": "Edit"
+		}
+	},
+	"events": {
+		"message": {
+			"levelSystemOff": "Level system is disabled, activate using my website. n!site",
+			"levelup": "You have moved up to the **{curLevel}** level! :star:",
+			"noPerm": "I need more permissions to run this command."
+		}
+	},
+	"modules": {
+		"utilPlay": {
+			"playlistEnded": "the playlist is over!",
+			"songNotFound": "Song not found!",
+			"startPlaying": "🎶 Starting to play: **{songTitle}** \n {songUrl}",
+			"skippedSong": "skipped the song! ⏩",
+			"pausedSong": "paused the music! ⏸",
+			"unPausedSong": "summed up the song! ▶",
+			"unMutedSong": "unmuted the music! 🔊",
+			"mutedSong": "mutated the music! 🔇",
+			"liveNotSupported": "Livestreams are not supported!",
+			"decreasedVolume": "lowered the volume, the volume is now **{queueVolume}%** 🔉",
+			"increasedVolume": "increased the volume, the volume is now **{queueVolume}%** 🔊",
+			"loopMode": {
+				"text": "Loop mode is **{queueLoopMode}**",
+				"on": "turned on",
+				"off": "turned off"
+			},
+			"thanks": "Thank you for using my services!",
+			"likeMe": "Enjoying the bot?",
+			"stoppedNonPremium": "Sponsor me on **[patreon](https://noid.one/patreon)** to further improve my services and offer the best music ❤️",
+			"errors": {
+				"error": "There was an error performing this action!",
+				"notinsamechannel": "You must be on a voice channel for this!"
+			},
+			"favedSong": "added this song to their favorites list!"
+		},
+		"functions": {
+			"suggestion": {
+				"suggestion": "Suggestion",
+				"approved": "Approved by a total of **{totalVotes}** votes by members!",
+				"approvedByAdm": "Approved by <@!{admID}>!",
+				"denied": "Denied by <@!{admID}>!"
+			},
+			"toDo": {
+				"description": "**Description**",
+				"limitDate": "**Limit Date**",
+				"statusPending": "Pending",
+				"statusFinalized": "Concluded!",
+				"statusCanceled": "Canceled!"
+			}
+		}
+	},
+	"command": {
+		"ascii": {
+			"help": {
+				"category": "Fun",
+				"description": "Transform a text into ASCII",
+				"example": "ascii {text}"
+			},
+			"errors": {
+				"notext": "You need to enter a text to convert to ASCII!",
+				"toolongtext": "The text is too long, try something shorter!",
+				"error": "There was an error when writing your ASCII!"
+			}
+		},
+		"bal": {
+			"help": {
+				"category": "Economy",
+				"description": "View your bank or other member's information",
+				"example": "bal"
+			},
+			"responses": {
+				"description": "<@!{userID}> has **{amount}** noid coins in your bank account in this server!"
+			}
+		},
+		"baltop": {
+			"help": {
+				"category": "Economy",
+				"description": "Shows the server members who have the most money",
+				"example": "baltop"
+			},
+			"responses": {
+				"embed": {
+					"title": "Richest Members List",
+					"description": "Top 10 richest server leaders"
+				}
+			}
+		},
+		"bet": {
+			"help": {
+				"category": "Economy",
+				"description": "Bet your money here, you might get poor",
+				"example": "bet"
+			},
+			"responses": {
+				"noAmount": "Specify the amount you want to bet | bet {color} {amount}",
+				"notAvaliable": "You are betting more than you have!",
+				"colorbad": "Specify the color | Red [1.5x] Black [2x] Green [15x] ",
+				"green": "**Multiplier 15X** | You won {money} noid coins!",
+				"red": "**1.5X multiplier** | You have won {money} noid coins!",
+				"black": "**2X Multiplier** | You have won {money} noid coins!",
+				"lost": "**Multiplier 0X** | You have lost {money} noid coins!",
+				"max": "The maximum bet limit is **1500** Noid coins!",
+				"timeout": "You must wait {seconds}s to bet again."
+			}
+		},
+		"bigtext": {
+			"help": {
+				"category": "Fun",
+				"description": "Turn a text into an emoji",
+				"example": "bigtext {text}"
+			},
+			"errors": {
+				"notext": "You need to enter a text to convert!",
+				"error": "An error occurred while sending the message!"
+			}
+		},
+		"blurpify": {
+			"help": {
+				"category": "Fun",
+				"description": "Blurpify your or someone else's avatar",
+				"example": "blurpify @person"
+			},
+			"errors": {
+				"error": "An error occurred while performing this action!"
+			}
+		},
+		"botinfo": {
+			"help": {
+				"category": "Bot",
+				"description": "Shows bot information",
+				"example": "botinfo"
+			},
+			"responses": {
+				"links": "[Support Server]({support_guild}) | [Add Me]({bot_invite}) | [Patreon]({patreon_link}) | [My website]({website})",
+				"description": "The NoIdentity bot allows you to have all the features of a paid bot for free.",
+				"extrainfo": {
+					"title": "Extra Information:",
+					"description": "Developer: **{bot_owner}** | I Was Created On: **11/18/20**"
+				}
+			}
+		},
+		"btremove": {
+			"help": {
+				"category": "Moderation",
+				"description": "Removes someone from baltop",
+				"example": "btr <id or @>"
+			},
+			"noperms": "You do not have permissions to do so!",
+			"nouser": "You must mention or indicate a user ID for me to delete!",
+			"err": "There was an error performing this action, this user may no longer have a bank account!",
+			"cancel": "You have canceled clearing this user's data!",
+			"cleaned": "You have cleared information from <@!{UserToDeleteId}>!",
+			"really": "Are you sure you want to delete the <@!{UserToDeleteId}> bank account on this server?"
+		},
+		"changemymind": {
+			"help": {
+				"category": "Fun",
+				"description": "Photoshop a text into change my mind meme",
+				"example": "changemymind {text}"
+			}
+		},
+		"cleanup": {
+			"help": {
+				"category": "Moderation",
+				"description": "Clear the level and points of inactive members for more than 3 months.",
+				"example": "cleanup"
+			},
+			"errors": {
+				"noperm": "You do not have permission to do this!"
+			},
+			"responses": {
+				"description": "I cleared the level of **{removedLength}** inactive users for more than 3 months."
+			}
+		},
+		"cleanupeconomy": {
+			"help": {
+				"category": "Moderation",
+				"description": "Removes members who have been inactive for more than 3 months or are no longer on the server from the savings list.",
+				"example": "cleanupeconomy"
+			},
+			"erros": {
+				"noperm": "You don't have permissions for this!"
+			},
+			"responses": {
+				"description": "I cleaned the bank account of **{removeLength}** users who were inactive for more than 3 months or who were not on the server."
+			}
+		},
+		"daily": {
+			"help": {
+				"category": "Economy",
+				"description": "Take your daily",
+				"example": "daily"
+			},
+			"responses": {
+				"collected": "You collected your daily money, now you have **${amount}** more in your account!"
+			},
+			"errors": {
+				"timeLeft": "You still can't get your daily money yet! **{hours}h, {minutes}m and {seconds}s** left."
+			}
+		},
+		"level": {
+			"help": {
+				"category": "Levels",
+				"description": "Shows your level and points in the server.",
+				"example": "level"
+			},
+			"responses": {
+				"description": "have/has **{points}** points and is at level **{level}**!"
+			}
+		},
+		"levelconfig": {
+			"help": {
+				"category": "Levels",
+				"description": "Configure the level system on your server",
+				"example": "levelconfig"
+			},
+			"responses": {
+				"canceledAction": "You canceled this action!",
+				"desativate": "You have disabled the tier system on this server!",
+				"activate": "You have activated the tier system on this server!",
+				"wantDeactivate": "Do you want to disable the tiering function on this server?",
+				"wantActivate": "Do you want to activate the levels function on this server?"
+			}
+		},
+		"favsongs": {
+			"help": {
+				"category": "Music",
+				"description": "Shows your favorite songs that you've heard on the bot.",
+				"example": "favsongs"
+			},
+			"errors": {
+				"zeroSongs": "This user doesn't have any song in their favorite list!"
+			},
+			"responses": {
+				"title": "Your favorite songs"
+			}
+		},
+		"graphics": {
+			"help": {
+				"category": "Miscellaneous",
+				"description": "Shows server statistics",
+				"example": "graphics"
+			},
+			"whatyouwant": "Which chart do you want to see?",
+			"msg": "Messages",
+			"members": "Member Flow",
+			"bans": "Bans",
+			"site": "Webite",
+			"commands": "Commands Used",
+			"messages": "Messages sent",
+			"msg_title": "Graph of messages sent on the server / Commands used on the server",
+			"joined_members": "Members who joined",
+			"leave_members": "Members who left",
+			"members_title": "Flow of members on this server",
+			"bannedMembers": "Banned Members",
+			"unbannedMembers": "Unbanned Members",
+			"bans_title": "Banned Members / Unbanned Members",
+			"page_visits": "Visits on the website page",
+			"page_refers": "People who clicked on the guild's invite on the website",
+			"votes": "Votes",
+			"page_flow_title": "Server flow at noid.one/g/{GUILDID}"
+		},
+		"gift": {
+			"help": {
+				"category": "Economy",
+				"description": "Send gifts to people with a 10% bonus",
+				"example": "gift <@user> <amount>"
+			},
+			"responses": {
+				"timeout": "You must wait {minutes}min and {seconds}s to send a gift again.",
+				"sent": "You sent a gift to <@!{ToID}>, for him / her to rescue this person you must access this link:\n ||https://noid.one/gift/{ID}|| (Confidential)",
+				"wNotification": "Would you like me to send a notification to this person?",
+				"sentYou": "You have received a gift from `{author}` go to: https://noid.one/gift/{ID} to redeem it.",
+				"dontNotify": "You have decided not to notify this user. Send him the link that I sent you up there. 👆",
+				"withoutOwner": "You have created an unowned gift, anyone with this link can redeem it: \n ||https: //noid.one/gift/{ID}|| (Confidential)",
+				"warn": "You have created a public gift. Do not share it publicly as anyone can redeem it.",
+				"alreadyExists": "Try again, there was an error and there is already a gift with this ID.",
+				"notEnoughMoney": "You don't have enough money!",
+				"youvesent": "You sent <@!{toID}> a gift"
+			},
+			"errors": {
+				"noUser": "You must tell whoever wants to send the gift!",
+				"invalidUser": "User mentioned is invalid!",
+				"amountInvalid": "Invalid value!"
+			}
+		},
+		"help": {
+			"help": {
+				"category": "Bot",
+				"description": "Show bot commands.",
+				"example": "help"
+			},
+			"responses": {
+				"description": "Type *{prefix} help <command>* to view detailed information about a command.",
+				"command": {
+					"title": "Command information: *{commandName}*",
+					"cat": "Category",
+					"description": "Description",
+					"usage": "Example",
+					"aliases": "Aliases"
+				}
+			}
+		},
+		"lang": {
+			"help": {
+				"category": "Moderation",
+				"description": "Change the language in which I will answer my commands",
+				"example": "lang"
+			},
+			"errors": {
+				"error": "There was an error executing this command!",
+				"timeout": "No time left, run the command again if you still want to change the language."
+			},
+			"responses": {
+				"description": "I am configured to speak ** {actual_lang} ** on this server. \n If you want you can change it using the reactions below.",
+				"langDescription": "Click on the reaction to change the language of the server.",
+				"changed": "You changed my language to **{lang}**.\n If you wanna change it again use: **n!lang**"
+			}
+		},
+		"leaderboard": {
+			"help": {
+				"category": "Levels",
+				"description": "Shows the members of the server that have the highest level.",
+				"example": "leaderboard"
+			},
+			"responses": {
+				"embed": {
+					"title": "Leadership List",
+					"description": "Our top 10 points leaders",
+					"points": "points",
+					"level": "Level"
+				}
+			}
+		},
+		"loop": {
+			"help": {
+				"category": "Music",
+				"description": "Enables repeat mode.",
+				"example": "loop"
+			},
+			"errors": {
+				"noqueue": "There is nothing currently playing! ❌",
+				"notsamechannel": "You must be on a voice channel for this!"
+			},
+			"responses": {
+				"res": " the **Repeat Mode** is {mode}!",
+				"modes": {
+					"on": "on",
+					"off": "off"
+				}
+			}
+		},
+		"lyrics": {
+			"help": {
+				"category": "Music",
+				"description": "Shows the lyrics of the song you are playing.",
+				"example": "lyrics"
+			},
+			"errors": {
+				"noqueue": "There is nothing currently playing! ❌",
+				"notfound": "No lyrics were found on {title}"
+			},
+			"response": {
+				"title": "Lyrics: {title}"
+			}
+		},
+		"salary": {
+			"help": {
+				"category": "Economy",
+				"description": "Takes your month salary",
+				"example": "salary"
+			},
+			"errors": {
+				"timeLeft": "You still can't get your salary money yet! **{days}d, {hours}h, {minutes}m and {seconds}s** left."
+			},
+			"responses": {
+				"collected": "You collected your salary money, now you have **${amount}** more in your account!"
+			}
+		},
+		"magik": {
+			"help": {
+				"category": "Fun",
+				"description": "Do a magik-style photoshop on someone",
+				"example": "magik @person"
+			}
+		},
+		"nowplaying": {
+			"help": {
+				"category": "Music",
+				"description": "Shows music in play. ",
+				"example": "np"
+			},
+			"errors": {
+				"noqueue": "There is nothing currently playing! ❌"
+			},
+			"responses": {
+				"playing": "Playing",
+				"remain_time": "Time left:"
+			}
+		},
+		"pay": {
+			"help": {
+				"category": "Economy",
+				"description": "Pay someone with your money",
+				"example": "pay <@user> <quantia>"
+			},
+			"responses": {
+				"paid": "You paid **${amount}** to <@!{ToUserID}>!"
+			},
+			"errors": {
+				"nomention": "You must mention someone to send the money!",
+				"noamount": "You must say how much money you want to send!",
+				"userdoesnthavemoney": "You need to have more **{neededAmount}** to do this!",
+				"bot": "You cannot give money to a bot!"
+			}
+		},
+		"pause": {
+			"help": {
+				"category": "Music",
+				"description": "Pauses the music playing.",
+				"example": "pause"
+			},
+			"errors": {
+				"noqueue": "There is nothing currently playing! ❌",
+				"notinsamechannel": "You must be on the same voice channel as me for that!"
+			},
+			"responses": {
+				"paused": "has paused the music! ⏸"
+			}
+		},
+		"ping": {
+			"help": {
+				"category": "Bot",
+				"description": "Shows the latency of the bot.",
+				"example": "ping"
+			},
+			"responses": {
+				"description": "🏓 My response time is **{ping}**ms. And Discord's response time is **{api_ping}**ms."
+			}
+		},
+		"play": {
+			"help": {
+				"category": "Music",
+				"description": "Plays music from Youtube",
+				"example": "play <song name | url>"
+			},
+			"errors": {
+				"nochannel": "You must be on a voice channel for this!",
+				"notsamechannel": "You must be on the same voice channel as me.",
+				"noargs": "Use: {prefix}play <Title or URL from your video>",
+				"noperms": {
+					"CONNECT": "I can't connect to voice channels, permissions are missing!",
+					"SPEAK": "I can't play on this voice channel, permissions are missing!"
+				},
+				"notfound": "No content was found in this URL.",
+				"redirecting": "Following URL redirection...",
+				"channelNotFound": "I couldn't join the voice channel!",
+				"notValidSource": "Eu só aceito links do Youtube",
+				"onlyForPremiums": "<:spotify:794266907939307572> | You must be **[Patreon](https://noid.one/patreon)** to listen to Spotify music."
+			},
+			"responses": {
+				"addedToQueue": "✅ **{songTitle}** has been added to the playlist by "
+			}
+		},
+		"playlist": {
+			"help": {
+				"category": "Music",
+				"description": "Plays a youtube playlist",
+				"example": "playlist {Playlist name | playlist URL}"
+			},
+			"errors": {
+				"noargs": "Use: {prefix}play <Title or URL from youtube video>",
+				"nochannel": "You must be on a voice channel for this!",
+				"noperms": {
+					"CONNECT": "I can't connect to voice channels, permissions are missing!",
+					"SPEAK": "I can't play on this voice channel, permissions are missing!"
+				},
+				"notsamechannel": "You must be on the same channel as me for this!",
+				"playlist_notfound": "Playlist not found! :(",
+				"error": "There was an error while performing this action!",
+				"playlistTooLong": "Playlist longer than allowed...",
+				"thereIsAnError": "Could not enter the voice channel, error:"
+			},
+			"responses": {
+				"importing_playlist": "⌛ Importing playlist...",
+				"playlistAddedToQueue": "your playlist has been added to the playlist!"
+			}
+		},
+		"profile": {
+			"help": {
+				"category": "Miscellaneous",
+				"description": "Shows a profile card.",
+				"example": "profile {@member}"
+			},
+			"responses": {
+				"dev": "Developer",
+				"bughunter": "Bughunter",
+				"premium": "Sponsor",
+				"textNeeded": "You have {current}XP and you need more {needed}XP!"				
+			}
+		},
+		"purge": {
+			"help": {
+				"category": "Moderation",
+				"description": "Delete the messages in a channel",
+				"example": "purge {number-of-messages}"
+			},
+			"errors": {
+				"amountSizeErr": "You must select between 1 or 100 messages!",
+				"permErr": "You don't have permissions for this!"
+			},
+			"responses": {
+				"description": "I deleted **{deleteAmount}** in the channel"
+			}
+		},
+		"queue": {
+			"help": {
+				"category": "Music",
+				"description": "Shows the current playlist.",
+				"example": "queue"
+			},
+			"errors": {
+				"noPerm": "You lack permissions to add reactions!",
+				"noqueue": "There is nothing currently playing! ❌"
+			},
+			"responses": {
+				"actualPage": "**CurrentPage}/{embedLength}**",
+				"queueTitle": "Playlist",
+				"actualSong": "Current song - [{currentSongTitle}]({currentSongURL})**\n\n{Info}"
+			}
+		},
+		"rep": {
+			"help": {
+				"category": "Miscellaneous",
+				"description": "It gives a person a point of reputation.",
+				"example": "rep @user"
+			},
+			"responses": {
+				"timeout": "⏰ | You should wait {hours}hrs and {minutes}min to give someone a reputation.",
+				"notamember": "This mentioned user is not a member of this server.",
+				"reppremium": "<:wumpus_star:794707740198043668> | You gave **+2** points to <@!{userID}> for being a Premium member.",
+				"reps": "You gave **+1** reputation points to <@!{userID}>",
+				"nouser": "You must mention someone to make a name for yourself!",
+				"notsame": "You cannot give yourself reputation!"
+			}
+		},
+		"remove": {
+			"help": {
+				"category": "Music",
+				"description": "Removes music from playlist",
+				"example": "remove <Song postion in queue>"
+			},
+			"errors": {
+				"noqueue": "There is nothing currently playing! ❌",
+				"notsamechannel": "You must be on a voice channel for this!"
+			}
+		},
+		"remfavsongs": {
+			"help": {
+				"category": "Music",
+				"description": "Removes songs from your favorites list",
+				"example": "rf <song number in your list>"
+			},
+			"didit": "I removed these songs from your favorite list",
+			"noargs": "You must tell which songs you want to remove from your favorites",
+			"nofavs": "You do not have any songs to be removed.",
+			"notesongs": "You don't have that song on your favorites."
+		},
+		"resume": {
+			"help": {
+				"category": "Music"
+			},
+			"errors": {
+				"noqueue": "There is nothing currently playing! ❌",
+				"notsamechannel": "You must be on a voice channel for this!"
+			}
+		},
+		"reset": {
+			"help": {
+				"category": "Moderation",
+				"description": "Reset some bot database options on your server.",
+				"example": "reset"
+			},
+			"responses": {
+				"title": "What do you want to reset on this server?",
+				"lvlList": "List of levels",
+				"economyEconomy": "Economy list",
+				"guildConfigs": "Server settings",
+				"reset": {
+					"levels": "Do you really want to reset the levels of this server?",
+					"economy": "Do you really want to reset this server's economy?",
+					"configs": "Do you really want to reset this server's settings?"
+				},
+				"lvlClear": "I cleared **{usersSize}** level list users!",
+				"economy": "I cleared **{usersSize}** users from the economy list!",
+				"website": "You should do this on my website:",
+				"canceled": "You canceled this action!"
+			}
+		},
+		"serverconfig": {
+			"help": {
+				"category": "Moderation",
+				"description": "Show my configurations in your server",
+				"example": "serverconfig"
+			},
+			"responses": {
+				"title": "Server Configurations",
+				"prefix": "Prefix",
+				"language": "Linguage",
+				"radio_channel": "Music voice channel",
+				"welcome_channel": "Welcome channel",
+				"welcome_message": "Welcome message",
+				"welcome_role": "Welcome role",
+				"news_channel": "News channel",
+				"editable": "You can change this configs on my website. *n!info*"
+			}
+		},
+		"serverinfo": {
+			"help": {
+				"category": "Miscellaneous",
+				"description": "Shows guild information",
+				"example": "serverinfo"
+			},
+			"responses": {
+				"regions": {
+					"brazil": "Brazil",
+					"europe": "Europe",
+					"hongkong": "Hong Kong",
+					"india": "India",
+					"japan": "Japan",
+					"russia": "Russia",
+					"singapore": "Singapore",
+					"southafrica": "South Africa",
+					"sydney": "Sidney",
+					"us-central": "US Central",
+					"us-east": "US East",
+					"us-west": "US West",
+					"us-south": "US South"
+				},
+				"filterLevels": {
+					"ALL_MEMBERS": "Applies to everyone",
+					"MEMBERS_WITHOUT_ROLES": "Only for people without position",
+					"DISABLED": "Disabled"
+				},
+				"verificationLevels": {
+					"NONE": "None",
+					"LOW": "Low",
+					"MEDIUM": "Medium",
+					"HIGH": "High",
+					"VERY_HIGH": "Very high"
+				},
+				"embed": {
+					"title": "Information",
+					"name": "Name",
+					"id": "ID",
+					"region": "Region",
+					"owner": "Owner",
+					"premiumTier": {
+						"title": "Boost level",
+						"level": "Level",
+						"none": "None"
+					},
+					"premiumSubscriptionCount": "Amount of boosts",
+					"moderation": "Moderation",
+					"verificationLevel": "Verification level",
+					"filterLevel": "Media filter",
+					"createdAt": {
+						"title": "Creation date",
+						"at": "at"
+					},
+					"stats": {
+						"title": "Statistics",
+						"roles": "Roles",
+						"emojis": "Emojis",
+						"members": "Members",
+						"channels": "Channels"
+					},
+					"activity": {
+						"title": "Activity",
+						"online": "Online",
+						"idle": "Idle",
+						"dnd": "Do not disturb",
+						"offline": "Offline"
+					}
+				}
+			}
+		},
+		"site": {
+			"help": {
+				"category": "Bot",
+				"description": "Shows bot's website!",
+				"example": "site"
+			}
+		},
+		"ship": {
+			"help": {
+				"category": "Fun",
+				"description": "Creates a couple meme with two people",
+				"example": "ship {@member} {@member2}"
+			},
+			"errors": {
+				"nottwomembers": "You must mention two people!",
+				"error": "There was an error executing this action!"
+			}
+		},
+		"shuffle": {
+			"help": {
+				"category": "Music",
+				"description": "Activates random play mode",
+				"example": "shuffle"
+			},
+			"errors": {
+				"noqueue": "There is nothing currently playing! ❌",
+				"notinsamechannel": "You must be on the same voice channel as me for this!"
+			},
+			"responses": {
+				"description": "randomly mixed the playlist. 🔀"
+			}
+		},
+		"skip": {
+			"help": {
+				"category": "Music",
+				"description": "Skips the playing song",
+				"example": "skip"
+			},
+			"errors": {
+				"noqueue": "There is nothing currently playing! ❌",
+				"notinsamechannel": "You must be on the same voice channel as me for this!"
+			},
+			"responses": {
+				"description": "skipped the song ⏭"
+			}
+		},
+		"skipto": {
+			"help": {
+				"category": "Music",
+				"description": "Jump to a certain position in the queue.",
+				"example": "skipto {número da música na playlist}"
+			},
+			"errors": {
+				"noqueue": "There is nothing currently playing! ❌",
+				"notinsamechannel": "You must be on the same voice channel as me for this!",
+				"noargs": "The playlist has **{queueLength}** songs!",
+				"cant": "You cannot play a song that you are just listening to.",
+				"isntnumber": "You should only use numbers.",
+				"how": "Use: skipto <number of the song you want to skip to>"
+			},
+			"responses": {
+				"description": "skipped to song **#{songSkipped}** ⏭"
+			}
+		},
+		"stats": {
+			"help": {
+				"category": "Bot",
+				"description": "Shows bot statistics",
+				"example": "stats"
+			},
+			"responses": {
+				"time": {
+					"days": "days",
+					"hours": "h",
+					"minutes": "m",
+					"seconds": "s"
+				},
+				"embed": {
+					"title": "Statistics",
+					"memory": "Memory usage",
+					"uptime": "Uptime",
+					"users": "Users",
+					"servers": "Servers",
+					"channels": "Channels",
+					"version": "Version",
+					"time_taken": "Time taken"
+				}
+			}
+		},
+		"stop": {
+			"help": {
+				"category": "Music",
+				"description": "Stops music and clears the playlist",
+				"example": "stop"
+			},
+			"errors": {
+				"noqueue": "There is nothing currently playing! ❌",
+				"notinsamechannel": "You must be on the same voice channel as me for this!"
+			},
+			"responses": {
+				"description": "stopped the music! ⏹"
+			}
+		},
+		"trumptweet": {
+			"help": {
+				"category": "Fun",
+				"description": "Creates a Tweet as if it were Trump",
+				"example": "trumptweet {text}"
+			},
+			"errors": {
+				"err": "There was an error executing this action!",
+				"textoolong": "This text is too long! Try something shorter!",
+				"notext": "You need to enter a text for this!"
+			}
+		},
+		"userinfo": {
+			"help": {
+				"category": "Miscellaneous",
+				"description": "Shows a user's information.",
+				"example": "userinfo"
+			},
+			"errors": {
+				"error": "There was an error seeing the requested information."
+			},
+			"responses": {
+				"isntBooster": "Isn't a booster",
+				"boosterSince": "Booster since",
+				"bot": "Bot",
+				"user": "User",
+				"tag": "Tag",
+				"ID": "ID",
+				"nickname": "Nickname",
+				"none": "None",
+				"accountType": "Account Type",
+				"createdAt": "Created your account",
+				"member": "Member",
+				"joinedAt": "Joined at",
+				"badges": "Badges",
+				"roles": "Roles",
+				"activity": {
+					"title": "Activity",
+					"playing": "Playing",
+					"listening": "Listening",
+					"status": "Status",
+					"error": "I couldn't find what this user is doing",
+					"details": "Details",
+					"url": "URL"
+				},
+				"aboutWho": "Info about {member}"
+			}
+		},
+		"volume": {
+			"help": {
+				"category": "Music",
+				"description": "Changes the now playing song volume",
+				"example": "volume 0/100"
+			},
+			"errors": {
+				"noqueue": "There is nothing currently playing! ❌",
+				"notinsamechannel": "You must be on the same voice channel as me for this!",
+				"noargs": "Current volume is **{actualVolume}%** 🔊",
+				"isNaN": "Utilize algum número entre 0/100."
+			},
+			"responses": {
+				"description": "changed the volume to **{volumeX}%** 🔊"
+			}
+		},
+		"vote": {
+			"help": {
+				"category": "Bot",
+				"description": "Checks whether you or someone else has already voted for the bot on Top.gg",
+				"example": "vote"
+			},
+			"responses": {
+				"youVoted": "You've voted for me in the last ** 12 hours **! Thank you very much!",
+				"youDidNotVote": "You haven't voted for me in the last **12 hours** <:topgg:796784876610256928>. Vote [Here](https://top.gg/bot/{botID}/vote?ref=botCommand)",
+				"userVoted": "already voted for me in the last **12 hours**! Thank you very much!",
+				"userDidNotVote": "you haven't voted for me in the last **12 hours** <:topgg:796784876610256928>. Vote [Here](https://top.gg/bot/{botID}/vote?ref=botCommand)"
+			}
+		},
+		"weather": {
+			"help": {
+				"category": "Miscellaneous",
+				"description": "Shows the weather forecast for a location",
+				"example": "weather {local}"
+			},
+			"responses": {
+				"skytext": {
+					"MostlySunny": "Mostly Sunny",
+					"Sunny": "Sunny",
+					"LightRain": "Light Rain",
+					"Rainny": "Rainny",
+					"Snow": "Snow",
+					"MostlyCloudy": "Mostly Cloudy",
+					"Cloudy": "Cloudy",
+					"Haze": "Haze",
+					"PartlySunny": "Partly Sunny",
+					"RainShowers": "Rain Showers"
+				},
+				"weather_forecast": "Weather at",
+				"time_zone": "Timezone",
+				"degreeType": "Degree Type",
+				"temperature": "Temperature",
+				"wind": "Wind",
+				"feelsLike": "Thermal sensation",
+				"humidity": "Humidity"
+			},
+			"errors": {
+				"noargs": "*Say the location you want!*",
+				"notfound": "*I didn't find this place!*",
+				"error": "*There was an error looking for the weather.*"
+			}
+		},
+		"work": {
+			"help": {
+				"category": "Economy",
+				"description": "Work every 6 hours to get your money",
+				"example": "work"
+			},
+			"responses": {
+				"collected": "Since you worked, you received **${amount}** more in your account!"
+			},
+			"errors": {
+				"timeLeft": "You still can't work yet! **{hours}h, {minutes}m and {seconds}s** left."
+			}
+		},
+		"support": {
+			"help": {
+				"category": "Support",
+				"description": "Contact bot's support",
+				"example": "support"
+			}
+		}
+	}
+}

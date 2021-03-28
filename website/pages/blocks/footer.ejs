@@ -1,31 +1,123 @@
 
+<style>
+    .footer-dropbtn {
+        background-color: #313233;
+        color: white;
+        padding: 6px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+    }
 
-<div class="footer" style="margin-top: 150px;">
+    .footer-dropup {
+        position: relative;
+        display: inline-block;
+        margin-left: 2px;
+    }
+
+    .footer-dropup-content {
+        display: none;
+        position: absolute;
+        bottom: 46px;
+        right: -17%;
+        border-radius: 5px;
+        background-color: #313233;
+        min-width: 20px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+
+    .footer-dropup-content a {
+        color: white;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .footer-dropup-content a:hover {
+        background-color: #333435;
+        border-radius: 5px;
+    }
+
+    .footer-dropup:hover .footer-dropup-content {
+        display: block;
+        border-radius: 5px;
+    }
+
+    .footer-dropup:hover .footer-dropbtn {
+        background-color: #504e4e;
+        border-radius: 5px;
+    }
+
+    .footer img {
+        margin-left: 50%;
+        margin-top: -30%;
+    }
+</style>
+
+<div class="footer" style="background-color: #23272A; margin-top: 150px;">
     <hr style="height:2px;border-width:0;color:#272a2c; background-color: #272a2c;">
     <div class="container">
         <div class="footer-row">
             <div class="footer-column">
-                <h1>NoIdentity</h1>
+                <h1><%= client.user.username %></h1>
                 <p style="font-style: italic;">© Copyright 2020-2021</p>
             </div>
             <div class="footer-column">
-                <h1>Sites Externos</h1>
+                <h1><%= i18n.__("site.footer.external_websites") %></h1>
                 <p>
                     <a href="https://top.gg/bot/778753927369850880">Top.gg</a><br>
                     <a href="https://www.flaticon.com/">FlatIcon.com</a><br>
                 </p>
             </div>
             <div class="footer-column">
-
+                <h1><%= i18n.__("site.footer.pages") %></h1>
+                <p>
+                    <a href="/"><%= i18n.__("site.navbar.home") %></a><br>
+                    <a href="#features"><%= i18n.__("site.home.features") %></a><br>
+                    <a href="/commands"><%= i18n.__("site.navbar.commands") %></a><br>
+                    <a href="/profile"><%= i18n.__("site.navbar.profile") %></a>
+                </p>
             </div>
             <div class="footer-column">
-                <h1>Páginas do site</h1>
-                <p>
-                    <a href="/">Início</a><br>
-                    <a href="#features">Recursos</a><br>
-                    <a href="/commands">Comandos</a><br>
-                    <a href="/profile">Perfil</a>
-                </p>
+                <h1><%= i18n.__("site.footer.languages") %></h1>
+                <script>
+                    $("#footer-dropdown-content").click(function(){
+                        $("#footer-dropdown-content").hide();
+                    });
+                </script>
+                
+            <% if(!lang || lang === 'pt_br') { %>
+                <div class="footer-dropup">
+                    <button class="footer-dropbtn">
+                        <i class="twa twa-2x twa-brazil-flag"></i>
+                    </button>
+                    <div class="footer-dropup-content">
+                        <a href="?lang=en"><i class="twa twa-2x twa-us"></i></a>
+                        <a href="?lang=es"><i class="twa twa-2x twa-spain-flag"></i></a>
+                    </div>
+                </div>
+            <% } else if(lang === 'en') { %>
+                <div class="footer-dropup">
+                    <button class="footer-dropbtn">
+                        <i class="twa twa-2x twa-us"></i>
+                    </button>
+                    <div class="footer-dropup-content">
+                        <a href="?lang=pt_br"><i class="twa twa-2x twa-brazil-flag"></i></a>
+                        <a href="?lang=es"><i class="twa twa-2x twa-spain-flag"></i></a>
+                    </div>
+                </div>
+            <% } else if(lang === 'es') { %>
+                <div class="footer-dropup">
+                    <button class="footer-dropbtn">
+                        <i class="twa twa-2x twa-spain-flag"></i>
+                    </button>
+                    <div class="footer-dropup-content">
+                        <a href="?lang=en"><i class="twa twa-2x twa-us"></i></a>
+                        <a href="?lang=pt_br"><i class="twa twa-2x twa-brazil-flag"></i></a>
+                    </div>
+                </div>
+            <% } %>
             </div>
         </div>
     </div>

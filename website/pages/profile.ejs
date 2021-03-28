@@ -1,15 +1,326 @@
-<%- include('blocks/header', {client: client, auth: auth, user: user}) %>
+<%- include('blocks/header', {client: client, auth: auth, user: user, page: page, page: page, i18n: i18n, lang: lang, moment: moment}) %>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js" type="text/javascript"></script>
 
 <div class="container">
     <div class="container">
         <div class="profile-header">
-            <img class="profile-icon" src="https://cdn.discordapp.com/avatars/<%= user.id %>/<%= user.avatar %>.png?size=1024">
+            <img class="profile-icon" src="https://cdn.discordapp.com/avatars/<%= user.id %>/<%= user.avatar %>?size=1024">
             <h1 class="profile-name"><%= user.username %></h1>
-        </div>
-        <div class="profile-body">
+            <% let dateFormat = /(\d{4})([/-])(\d{1,2})([/-])(\d{1,2})/; %>
 
+            <p class="profile-about">
+            <% if(client.usersdata.get(user.id).profile.role) { %><%= client.usersdata.get(user.id).profile.role.slice(0, 100) %> - <% } %> <% if(client.usersdata.get(user.id).profile.bio) { %> <%= client.usersdata.get(user.id).profile.bio.slice(0, 256) %> <% } %>
+            </p>
+
+            <% if(dateFormat.test(client.usersdata.get(user.id).profile.birthday)) { %>
+                <p class="profile-birthday" id="bday" title="<%= i18n.__('site.profile.your_bday') %>"><i class="twa twa-lg twa-tear-off-calendar"></i>  <% if(lang === 'en') { %> <%= moment(client.usersdata.get(user.id).profile.birthday).format('MM/DD/YYYY') %> <% } else { %> <%= moment(client.usersdata.get(user.id).profile.birthday).format('DD/MM/YYYY') %> <% } %> </p>
+            <% } %>
+            <p class="profile-edit"><a class="profile-edit-btn" href="/config/<%= user.id %>?type=user"><%= i18n.__("site.profile.edit") %></a></p>
         </div>
     </div>
 </div>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#272a2c" fill-opacity="1" d="M0,64L48,64C96,64,192,64,288,85.3C384,107,480,149,576,144C672,139,768,85,864,74.7C960,64,1056,96,1152,106.7C1248,117,1344,107,1392,101.3L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+<div class="secondary-color-div">
+    <div class="profile-body">
+        <div class="large-container">
+            <div class="large-container">
+                <div class="container">
+                    <div class="logs-div">
+                        <script>
+                            
+                            $(document).ready(function(){
 
+                                $("#btn_show").click(function(){
+                                    $("#logs").slideToggle(0);
+                                });
+                                
+                                $("#btn_show").click(function() {
+                                    $(this).toggleClass("rotate");
+                                });
+
+                                $("#btn_show_2").click(function(){
+                                    $("#graphics").slideToggle(0);
+                                });
+                                
+                                $("#btn_show_2").click(function() {
+                                    $(this).toggleClass("rotate");
+                                });
+
+                            });
+                            
+                        </script>
+
+                        <div class="up-bar">
+                            <button href="#" id="btn_show"><i class="fas fa-chevron-down" style="color: #8855ff;"></i></button>
+                            <span>
+                                <%= i18n.__('site.profile.activity') %>
+                            </span>
+                        </div>
+                        <div class="logs" id="logs">
+                            <% var logsArray = client.usersdata.get(user.id).profile.logs || []; %>
+                            <% var logs = logsArray.sort((a, b) => b.data.time - a.data.time)%>
+                            <% logs.slice(0, 5).map(log => { %>
+                                <% if(log.type === 'GIFT_REDEEMED') { %>
+                                <div class="log">
+                                    <div class="type">
+                                        <span>
+                                            <i class="twa twa-lg twa-gift"></i> <b><%= i18n.__('site.profile.gift_redeemed') %></b>
+                                        </span>
+                                    </div>
+                                    <div class="description">
+                                        <% var toIcon = client.users.cache.get(log.data.redeemedBy) ? `https://cdn.discordapp.com/avatars/${log.data.redeemedBy}/${client.users.cache.get(log.data.redeemedBy).avatar}?size=1024` : `/assets/images/not_found.png` %>
+                                        <% var toName = client.users.cache.get(log.data.redeemedBy) ? client.users.cache.get(log.data.redeemedBy).tag : 'Usuário não encontrado' %>
+                                        <img src="<%= toIcon %>"/>
+                                        <span>
+                                            <%= i18n.__mf('site.profile.redeemedAGift', {name: toName}) %>
+                                        </span>
+                                    </div>
+                                </div>
+                                <% } else if(log.type === 'GIFT_RECEIVED') { %>
+                                <div class="log">
+                                    <div class="type">
+                                        <span>
+                                            <i class="twa twa-lg twa-gift"></i> <b><%= i18n.__('site.profile.gift_received') %></b>
+                                        </span>
+                                    </div>
+                                    <div class="description">
+                                        <% var fromIcon = client.users.cache.get(log.data.fromID) ? `https://cdn.discordapp.com/avatars/${log.data.fromID}/${client.users.cache.get(log.data.fromID).avatar}?size=1024` : `/assets/images/not_found.png` %>
+                                        <% var fromName = client.users.cache.get(log.data.fromID) ? client.users.cache.get(log.data.fromID).tag : 'Usuário não encontrado' %>
+                                        <img src="<%= fromIcon %>"/>
+                                        <span>
+                                            <%= i18n.__mf('site.profile.sentYouAGift', {name: fromName}) %> <% if(!client.presentes.get(log.data.giftID).redeemedAt) { %> <a href="/gift/<%= log.data.giftID %>"><%= i18n.__('site.profile.redeem') %></a> <% } %>
+                                        </span>
+                                    </div>
+                                </div>
+                                <% } else if(log.type === 'GIFT_REDEEMED_YOU') { %>
+                                <div class="log">
+                                    <div class="type">
+                                        <span>
+                                            <i class="twa twa-lg twa-gift"></i> <b><%= i18n.__('site.profile.gift_redeemed') %></b>
+                                        </span>
+                                    </div>
+                                    <div class="description">
+                                        <% var fromName = client.users.cache.get(log.data.fromID) ? client.users.cache.get(log.data.fromID).tag : 'Usuário não encontrado' %>
+
+                                        <span>
+                                            <%= i18n.__mf('site.profile.youRedeemed', {name: fromName}) %>
+                                        </span>
+                                    </div>
+                                </div>
+                                <% } else if(log.type === 'GIFT_GENERATED') { %>
+                                <div class="log">
+                                    <div class="type">
+                                        <span>
+                                            <i class="twa twa-lg twa-gift"></i> <b><%= i18n.__('site.profile.gift_sent') %></b>
+                                        </span>
+                                    </div>
+                                    <div class="description">
+                                        <% var toIcon = client.users.cache.get(log.data.toID) ? `https://cdn.discordapp.com/avatars/${log.data.toID}/${client.users.cache.get(log.data.toID).avatar}?size=1024` : `/assets/images/not_found.png` %>
+                                        <% var toName = client.users.cache.get(log.data.toID) ? client.users.cache.get(log.data.toID).tag : 'Usuário não encontrado' %>
+                                        <img src="<%= toIcon %>"/>
+                                        <span>
+                                            <%= i18n.__mf('site.profile.youSent', {name: toName}) %>
+                                        </span>
+                                    </div>
+                                </div>
+                                <% } %>
+                            <% }); %>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="container" style="margin-top: 5%;">
+                    <div class="up-bar">
+                        <button href="#" id="btn_show_2"><i class="fas fa-chevron-down" style="color: #8855ff;"></i></button>
+                        <span>
+                            <%= i18n.__('site.profile.stats') %>
+                        </span>
+                    </div>
+                </div>
+                <div class="large-container" id="graphics">
+                    <div class="graphics-list">
+                        <div class="graphic">
+                            <h2><%= i18n.__("site.profile.xp_lvl") %></h2>
+                            <canvas id="levelChart" width="1080px"></canvas>
+                        </div>
+                        <div class="graphic">
+                            <h2><%= i18n.__("site.profile.economy") %></h2>
+                            <canvas id="economyChart" width="1080px"></canvas>
+                        </div>
+                        <!--
+                        <div class="graphic" style="margin-top: 5%;">
+                            <h2><%= i18n.__("site.profile.txt") %></h2>
+                            <canvas id="textChart" width="1080px"></canvas>
+                        </div>
+                        -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#272a2c" fill-opacity="1" d="M0,192L30,176C60,160,120,128,180,128C240,128,300,160,360,176C420,192,480,192,540,192C600,192,660,192,720,170.7C780,149,840,107,900,112C960,117,1020,171,1080,208C1140,245,1200,267,1260,256C1320,245,1380,203,1410,181.3L1440,160L1440,0L1410,0C1380,0,1320,0,1260,0C1200,0,1140,0,1080,0C1020,0,960,0,900,0C840,0,780,0,720,0C660,0,600,0,540,0C480,0,420,0,360,0C300,0,240,0,180,0C120,0,60,0,30,0L0,0Z"></path></svg>
+
+        <%
+
+            var guilds_lvl = [];
+            var guild_economy = [];
+            var points = [];
+            var levels = [];
+            var moneys = [];
+
+            if(user.guilds) {
+                user.guilds.forEach(guild => {
+                    if(client.guilds.cache.get(guild.id)) {
+                        if(client.points.get(`${guild.id}-${user.id}`)) {
+                            var pts = client.points.get(`${guild.id}-${user.id}`).points;
+                            var lvl = client.points.get(`${guild.id}-${user.id}`).level;
+                            
+                            if(pts >= 1) {
+                                guilds_lvl.push(guild.name);
+                                points.push(pts);
+                                levels.push(lvl);
+                            }
+                            
+                        }
+    
+                        if(client.balance.get(`${guild.id}-${user.id}`)) {
+                            if(client.balance.get(`${guild.id}-${user.id}`).money > 0) {
+                                guild_economy.push(guild.name);
+                                moneys.push(client.balance.get(`${guild.id}-${user.id}`).money)
+                            }
+                        }
+                    }
+                });
+            };
+            
+
+        %>
+
+        <script>
+
+        var levelChartElement = document.getElementById('levelChart');
+        var levelChart = new Chart(levelChartElement, {
+            type: 'horizontalBar',
+            data: {
+                labels: <%- JSON.stringify(guilds_lvl) %>,
+                datasets: [{
+                    label: '<%= i18n.__("site.profile.your_lvl") %>',
+                    data: <%- JSON.stringify(levels) %>,
+                    borderWidth: 1,
+                    barPercentage: 0.5,
+                    barThickness: 12,
+                    maxBarThickness: 10,
+                    minBarLength: 1,
+                    backgroundColor: 'rgba(85, 255, 210, 0.7)',
+                    borderColor: 'rgba(85, 255, 210, 1)',
+                }, 
+                {
+                    label: '<%= i18n.__("site.profile.your_xp") %>',
+                    data: <%- JSON.stringify(points) %>,
+                    borderWidth: 1,
+                    barPercentage: 0.5,
+                    barThickness: 12,
+                    maxBarThickness: 10,
+                    minBarLength: 1,
+                    backgroundColor: 'rgba(136, 85, 255, 0.7)',
+                    borderColor: 'rgba(136, 85, 255, 1)',
+                }
+            ]
+            },
+            options: {
+                responsive: true,
+                legend: {
+                    labels: {
+                        fontColor: 'white',
+                        defaultFontFamily: "'Roboto', sans-serif",
+                    }
+                },
+                scales: {
+                    yAxes: [{
+                        ticks:{
+                            fontColor : "#fff",
+                            fontSize : 14
+                        }
+                    }],
+                    xAxes: [{
+                        ticks:{
+                            min : 0,
+                            fontColor : "#fff",
+                            fontSize : 14
+                        }
+                    }]
+                }
+            }
+        });
+
+        var economyChartElement = document.getElementById('economyChart');
+        var economyChart = new Chart(economyChartElement, {
+            type: 'horizontalBar',
+            data: {
+                labels: <%- JSON.stringify(guild_economy) %>,
+                datasets: [{
+                    label: '<%= i18n.__("site.profile.your_money") %>',
+                    data: <%- JSON.stringify(moneys) %>,
+                    borderWidth: 1,
+                    barPercentage: 0.5,
+                    barThickness: 12,
+                    maxBarThickness: 10,
+                    minBarLength: 1,
+                    backgroundColor: 'rgba(85, 255, 210, 0.7)',
+                    borderColor: 'rgba(85, 255, 210, 1)',
+                }
+            ]
+            },
+            options: {
+                responsive: true,
+                legend: {
+                    labels: {
+                        fontColor: 'white',
+                        defaultFontFamily: "'Roboto', sans-serif",
+                    }
+                },
+                scales: {
+                    yAxes: [{
+                        ticks:{
+                            fontColor : "#fff",
+                            fontSize : 14
+                        }
+                    }],
+                    xAxes: [{
+                        ticks:{
+                            min : 0,
+                            fontColor : "#fff",
+                            fontSize : 14
+                        }
+                    }]
+                }
+            }
+        });
+        
+        var textChartElement = document.getElementById('textChart');
+        /* var textChart = new Chart(textChartElement, {
+            type: 'pie',
+            data: {
+                labels: ['<%= i18n.__("site.profile.sent_msg") %>', '<%= i18n.__("site.profile.ran_cmds") %>'],
+                datasets: [{
+                    data: [client.Users.stats.get(user.id).messages_sent, client.Users.stats.get(user.id).used_commands],
+                    backgroundColor: ['rgba(136, 85, 255, 0.7)', 'rgba(85, 255, 210, 0.7)'],
+                    hoverBackgroundColor: ['rgba(136, 85, 255, 1)', 'rgba(85, 255, 210, 0.8)'],
+                    borderColor: ['rgba(136, 85, 255, 1)', 'rgba(85, 255, 210, 1)'],
+                }]
+            },
+            options: {
+                responsive: true,
+                legend: {
+                    labels: {
+                        fontColor: 'white',
+                        defaultFontFamily: "'Roboto', sans-serif",
+                    }
+                }
+            }
+        }); */
+
+        </script>
 <%- include('blocks/footer') %>

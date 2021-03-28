@@ -1,5 +1,6 @@
+
 const Discord = require("discord.js");
-const path = require("path");
+const Enmap = require("enmap");
 
 module.exports = async client => {
 
@@ -10,42 +11,12 @@ module.exports = async client => {
         console.log(`[${actualTime}][${type}] ${content}`);
     };
 
-    client.radioSearch = async () => {
-        client.joinedRadioChannels = [];
-
-        client.guilds.cache.forEach(guild => {
-            if(guild.voice) {
-                guild.channels.cache.get(guild.voice.channelID).leave();
-            };
-
-            const cfg = client.settings.get(guild.id);
-            if(!cfg) return;
-            const config = cfg.custom_configs;
-    
-            if(config.radio_channelID) {
-                if(guild.channels.cache.get(config.radio_channelID)) {
-                    guild.channels.cache.get(config.radio_channelID).join()
-                    .then(connection => {
-                        connection.voice.setSelfDeaf(true);
-                    });
-                    client.joinedRadioChannels.push(config.radio_channelID);
-                };
-            };
-        });
-
-        client.log('CLIENT', `Entrei em ${client.joinedRadioChannels.length} canais de rádio`);
-    };
-
-    client.datacheck = async () => {
-        client.users.cache.forEach(user => {
-            client.usersdata.ensure(user.id, client.config.default.user_settings);
-        });
-
-        client.guilds.cache.forEach(guild => {
-            client.settings.ensure(guild.id, client.config.default.guild_settings);
-        });
-        client.log('DATABASE', `Completei todos as configurações que estavam vazias`);
-    };
+    client.embed = (description) => {
+        var x = new Discord.MessageEmbed()
+        .setColor(client.config.color)
+        .setDescription(description);
+        return x;
+    }
 
     client.clean = (client, text) => {
 
@@ -59,119 +30,74 @@ module.exports = async client => {
 			.replace(client.config.oauth, 'NO OAUTH HERE');
 		return t;
     };
+
+    client.kFormatter = (num) => {
+        return Math.abs(num) > 999 ? Math.sign(num)*((Math.abs(num)/1000).toFixed(1)) + 'k' : Math.sign(num)*Math.abs(num);
+    };
+
+    client.projects = {
+        cache: new Enmap({name: "projects"}),
+        autouptade: autouptade = () => {
+            const channelID = '822175587908452422';
+            const messageID = '822473401264242689';
+
+            if(client.channels.cache.has(channelID)) {
+
+                client.channels.cache.get(channelID).messages.fetch({ limit: 1 })
+                .then(messages => {
+
+                    setInterval(function () {
+
+                        const message = messages.get(messageID);
+
+                        const Embed = new Discord.MessageEmbed()
+                        .setColor('#8855ff')
+                        .setTimestamp();
+
+                        for (const projectID of client.config.projects) {
+                            if(client.users.cache.has(projectID)) {
     
-    client.genUserToken = () => {
-        let length = 32;
-        var a = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890".split("");
-        var b = [];  
-        for (var i=0; i<length; i++) {
-            var j = (Math.random() * (a.length-1)).toFixed(0);
-            b[i] = a[j];
-        }
-        return b.join("");
-    };
-
-    client.genUserID = () => {
-        let length = 18;
-        var a = "1234567890".split("");
-        var b = [];  
-        for (var i=0; i<length; i++) {
-            var j = (Math.random() * (a.length-1)).toFixed(0);
-            b[i] = a[j];
-        }
-        return b.join("");
-    };
-
-    client.genAPIToken = () => {
-        let length = 64;
-        let a = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890_$-".split("");
-        let b = [];  
-        for (var i=0; i<length; i++) {
-            var j = (Math.random() * (a.length-1)).toFixed(0);
-            b[i] = a[j];
-        }
-        return b.join("");
-    };
-
-    client.genAPID = () => {
-        let length = 20;
-        let a = "1234567890".split("");
-        let b = [];  
-        for (var i=0; i<length; i++) {
-            var j = (Math.random() * (a.length-1)).toFixed(0);
-            b[i] = a[j];
-        }
-        return b.join(""); 
-    };
-
-    client.statsFunction = (method, type, command) => {
-        if(method === 'POST') {
-            if(type === 'COMMAND') {
-                client.stats.math(`stats`, `add`, 1, `ran_commands`);
-                if(command === 'MUSIC') {
-                    client.stats.math(`stats`, `add`, 1, `songs_listened`);
-                };
-            };
-        } else if(method === 'GET') {
-            return client.stats.get('stats');
-        };
-    };
-
-    client.suggestion = async (type, object, user) => {
-
-        if(true) return;
-
-        function createID() {
-            let length = 10;
-            var a = "1234567890".split("");
-            var b = [];  
-            for (var i=0; i<length; i++) {
-                var j = (Math.random() * (a.length-1)).toFixed(0);
-                b[i] = a[j];
-            }
-            return b.join("");
-        };
-
-        const channelID = client.config.bot_guild.suggestion_channel;
-
-        if(type === 'MESSAGE') {
-            if (object.channel.id === channelID) {
-                if (object.content.length >= 4) {
-
-                    let suggestion = {
-                        id: createID(),
-                        content: object.content,
-                        author: object.author,
-                        upvotes: 1,
-                        downvotes: 0,
-                        approved: false,
-                    };
-
-                    client.stats.push(`stats`, suggestion, `suggestions`);
-
-                    object.delete();
-
-                    let Embed = new Discord.MessageEmbed()
-                    .setColor(client.config.color)
-                    .setDescription(`Sugestão: ${suggestion.content}`)
-                    .setAuthor(object.author.tag, object.author.displayAvatarURL());
-                    object.channel.send(`||${suggestion.id}||`, Embed).then(msg => {
- 
-                    msg.react("785248178752585750")
-                    .then(() => msg.react("785248178836340747"))
-                    .catch(() => {
-                        console.log("Um dos emojis falharam ao serem adicionados.")
-                    });
-                    });
-                }
-            }
-        } else if(type === 'REACTION') {
-            if(object._emoji.id == '785248178752585750') { //Sim
-        
-            } else if(object._emoji.id == '785248178836340747') {// Nao
-
-            }
-        }
-    };
+                                client.projects.cache.ensure(projectID, {
+                                    id: projectID,
+                                    status: 'ONLINE',
+                                    description: '',
+                                });
     
+                                let project = client.projects.cache.get(projectID);
+                                let user = client.users.cache.get(projectID);
+    
+                                let stts = project.status;
+                                let status;
+                                let status_text;
+    
+                                if(stts == 'ONLINE') {
+                                    status = '<:online:792864058389823529>';
+                                    status_text = 'Online';
+                                } else if(stts == 'MAINTENCE') {
+                                    status = '<:idle:792864178377195550>';
+                                    status_text = 'Manutenção';
+                                } else if(stts == 'DEPREDICATED') {
+                                    status = '<:dnd:792864233120464908>';
+                                    status_text = 'Depredicado';
+                                } else if(stts == 'OFFLINE') {
+                                    status = '<:offline:792864272199581756>';
+                                    status_text = 'Offline';
+                                };
+    
+                                Embed.addField(`${status_text}`, `${status} | ${user} - ${project.description}\n\n`);
+                            };
+                        };
+    
+                        message.edit(Embed);
+
+                    }, 30000) //300000
+
+                })
+                .catch(console.error);
+
+            }
+
+        }
+    };
+
 };
